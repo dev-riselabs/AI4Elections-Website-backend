@@ -62,8 +62,30 @@
 
   --text-body: 20px;
   --text-body-small: 16px;
-
-
 }
+
+/* Sponsor Marquee Slider */
+@keyframes sponsor-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-sponsor-marquee {
+  display: flex;
+  width: max-content;
+  animation: sponsor-marquee 25s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-sponsor-marquee {
+    animation: none;
+  }
+}
+
 
 

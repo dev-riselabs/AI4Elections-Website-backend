@@ -1,29 +1,170 @@
+import { useState } from 'react';
+import { Play, Pause, Sparkles, MoveLeft, MoveRight } from 'lucide-react';
+
+interface Partner {
+  id: number;
+  name: string;
+  role: string;
+  src: string;
+  alt: string;
+}
+
+const partners: Partner[] = [
+  {
+    id: 1,
+    name: "NITDA Nigeria",
+    role: "Headline Tech Partner",
+    src: "/nitda_logo.png",
+    alt: "NITDA Logo",
+  },
+  {
+    id: 2,
+    name: "Rise Networks",
+    role: "Lead Convener",
+    src: "/rise_networks_logo.png",
+    alt: "Rise Networks Logo",
+  },
+  {
+    id: 3,
+    name: "AI4Elections",
+    role: "Initiative Host",
+    src: "/ai4elections_logo.png",
+    alt: "AI4Elections Logo",
+  },
+  {
+    id: 4,
+    name: "NCC Nigeria",
+    role: "Institutional Partner",
+    src: "/ncc_logo.png",
+    alt: "NCC Logo",
+  },
+  {
+    id: 5,
+    name: "INEC Nigeria",
+    role: "Electoral Stakeholder",
+    src: "/inec_logo.png",
+    alt: "INEC Logo",
+  },
+];
+
+// Replicate partners 4 times to ensure seamless infinite looping on all screen sizes
+const marqueeList = [
+  ...partners,
+  ...partners,
+  ...partners,
+  ...partners,
+];
+
 export default function Sponsors() {
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isHovered, setIsHovered] = useState(false);
+  const [direction, setDirection] = useState<'normal' | 'reverse'>('normal');
+
+  const toggleDirection = () => {
+    setDirection((prev) => (prev === 'normal' ? 'reverse' : 'normal'));
+  };
+
   return (
-    <section className="bg-white py-6 border-b border-gray-100">
-      <div className="flex justify-center items-center gap-12 flex-wrap max-w-6xl mx-auto px-4">
-        <img 
-          src="/tda-logo.png" 
-          alt="TDA Logo" 
-          className="h-12 object-contain opacity-80 hover:opacity-100 transition-opacity" 
-        />
-        <img 
-          src="/rise-networks-logo.png" 
-          alt="Rise Networks Logo" 
-          className="h-12 object-contain opacity-80 hover:opacity-100 transition-opacity" 
-        />
-        <img 
-          src="/ncc-logo.png" 
-          alt="NCC Logo" 
-          className="h-12 object-contain opacity-80 hover:opacity-100 transition-opacity" 
-        />
-        <img 
-          src="/ai6-logo.png" 
-          alt="AI6 Logo" 
-          className="h-12 object-contain opacity-80 hover:opacity-100 transition-opacity" 
-        />
+    <section
+      id="partners"
+      aria-label="Partners and Sponsors"
+      className="relative bg-white py-8 sm:py-10 border-b border-gray-100 overflow-hidden"
+    >
+      {/* Header Bar */}
+      <div className="max-w-7xl mx-auto px-4 mb-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2.5">
+        </div>
+
+        {/* Interactive Controls */}
+        <div className="flex items-center gap-2">
+           {/* Pause / Play Button */}
+          <button
+            type="button"
+            onClick={() => setIsPlaying((prev) => !prev)}
+            className="inline-flex items-center gap-1.5 text-xs text-gray-600 hover:text-gray-900 bg-gray-50 hover:bg-gray-100 border border-gray-200 px-3 py-1.5 rounded-full transition-all cursor-pointer shadow-xs active:scale-95"
+            title={isPlaying ? "Pause slider" : "Resume slider"}
+            aria-label={isPlaying ? "Pause slider" : "Resume slider"}
+          >
+            {isPlaying ? (
+              <>
+                <Pause className="w-3.5 h-3.5 text-gray-600" />
+                <span>Pause</span>
+              </>
+            ) : (
+              <>
+                <Play className="w-3.5 h-3.5 text-accent-text fill-accent-text" />
+                <span className="text-accent-text font-medium">Play</span>
+              </>
+            )}
+          </button>
+          {/* Reverse Direction Button */}
+          <button
+            type="button"
+            onClick={toggleDirection}
+            className="inline-flex items-center gap-1.5 text-xs text-gray-600 hover:text-gray-900 bg-gray-50 hover:bg-gray-100 border border-gray-200 px-3 py-1.5 rounded-full transition-all cursor-pointer shadow-xs active:scale-95"
+            title={`Reverse direction (currently ${direction === 'normal' ? 'left' : 'right'})`}
+            aria-label="Reverse slider direction"
+          >
+            {direction === 'normal' ? (
+              <>
+                <MoveRight className="w-3.5 h-3.5 text-gray-500" />
+                <span className="hidden xs:inline">Reverse</span>
+              </>
+            ) : (
+              <>
+                <MoveLeft className="w-3.5 h-3.5 text-gray-500" />
+                <span className="hidden xs:inline">Reverse</span>
+              </>
+            )}
+          </button>
+
+         
+        </div>
+      </div>
+
+      {/* Slider Viewport with Left & Right Gradient Blend Masks */}
+      <div
+        className="relative w-full overflow-hidden"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        onTouchStart={() => setIsHovered(true)}
+        onTouchEnd={() => setIsHovered(false)}
+      >
+        {/* Left smooth fade mask */}
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-28 md:w-44 bg-gradient-to-r from-white via-white/80 to-transparent z-10" />
+
+        {/* Right smooth fade mask */}
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-28 md:w-44 bg-gradient-to-l from-white via-white/80 to-transparent z-10" />
+
+        {/* Sliding Marquee Track */}
+        <div
+          className="flex items-center gap-6 sm:gap-8 w-max animate-sponsor-marquee py-2"
+          style={{
+            animationPlayState: isPlaying && !isHovered ? 'running' : 'paused',
+            animationDirection: direction,
+          }}
+        >
+          {marqueeList.map((partner, index) => (
+            <div
+              key={`${partner.id}-${index}`}
+              className="group relative flex flex-col items-center justify-center h-20 sm:h-24 px-8 py-3.5 rounded-2xl bg-white hover:bg-white border border-gray-200/70 hover:border-accent-text hover:shadow-lg transition-all duration-300 min-w-[200px] sm:min-w-[230px] cursor-pointer"
+            >
+              <img
+                src={partner.src}
+                alt={partner.alt}
+                className="max-h-11 sm:max-h-13 w-auto max-w-[155px] object-contain transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
+              />
+
+              {/* Tooltip badge on hover */}
+              <div className="pointer-events-none absolute -bottom-2 left-1/2 -translate-x-1/2 translate-y-full opacity-0 group-hover:opacity-100 transition-all duration-200 bg-gray-900 text-white text-[11px] font-medium py-1 px-3 rounded-lg whitespace-nowrap shadow-xl z-20">
+                <span>{partner.name}</span>
+                <span className="text-orange-400 ml-1.5">• {partner.role}</span>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
 }
-
