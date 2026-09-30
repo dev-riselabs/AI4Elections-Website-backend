@@ -4,6 +4,15 @@ import Sponsors from '../components/Sponsors';
 import SubNav from '../components/SubNav';
 import TechnicalDetails from '../components/TechnicalDetails/TechnicalDetails';
 import Footer from '../components/Footer';
+import Download from '../components/ConceptDocument/Download';
+import FaqContainer from '../components/Faq/FaqContainer';
+import TheHackathon from '../components/Hackathon/TheHackathon';
+import WhyAi4Election from '../components/Hackathon/WhyAi4Election';
+import TheChallenge from '../components/Hackathon/TheChallenge';
+import ChallengeArea from '../components/Hackathon/ChallengeArea';
+import WhyParticipate from '../components/Hackathon/WhyParticipate';
+import WhatMatters from '../components/Hackathon/WhatMatters';
+import Eligibility from '../components/Hackathon/Eligibility';
 
 const subNavTabs = [
   { id: 'technical-details', label: 'Technical Briefs' },
@@ -19,7 +28,7 @@ function Homepage() {
   const selectedTab = subNavTabs.find((tab) => tab.id === activeTab);
 
   return (
-   <div className="w-full min-h-screen bg-white text-gray-900 selection:bg-orange-500 selection:text-white">
+   <div className="w-full min-h-screen bg-white text-gray-900 selection:bg-orange-500 selection:text-white font-robotoMono">
       {/* 1. Navigation and Hero Section */}
       <Hero />
 
@@ -30,23 +39,29 @@ function Homepage() {
       <SubNav tabs={subNavTabs} activeTab={activeTab} onTabChange={setActiveTab} />
 
       <div id="subnav-panel" role="tabpanel" aria-labelledby={`${activeTab}-tab`}>
-        {activeTab === 'technical-details' ? (
-          <>
+        {activeTab === 'technical-details' &&
+         ( <>
             {/* 4. About & Details Section */}
             <TechnicalDetails />
 
-          </>
-        ) : (
-          <section className="flex min-h-90 items-center justify-center px-6 py-20 text-center">
-            <div>
-              <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-orange-600">
-                Coming soon
-              </p>
-              <h1 className="text-3xl font-bold text-gray-900">{selectedTab?.label}</h1>
-              <p className="mt-3 text-gray-600">This section is being prepared.</p>
-            </div>
-          </section>
-        )}
+          </>)}
+          {activeTab === 'concept-document' && <>
+          <Download/>
+          </>}
+
+          {activeTab === 'faq' && <>
+          <FaqContainer/>
+          </>}
+           {activeTab === 'hackathon' && <>
+          <TheHackathon/>
+          <WhyAi4Election/>
+          <TheChallenge/>
+          <ChallengeArea/>
+          <WhyParticipate/>
+          <Eligibility/>
+          <WhatMatters/>
+          </>}
+        
       </div>
 
       {/* 7. Dark Footer */}

@@ -24,8 +24,9 @@ const SubNav = <T extends string>({ tabs, activeTab, onTabChange }: SubNavProps<
   };
 
   return (
-    <nav className="w-full bg-linear-to-b from-brand-purple to-brand-blue shadow-sm overflow-x-auto p-4 py-7 font-robotoMono md:px-97">
-      <div role="tablist" aria-label="Hackathon sections" className="flex justify-center gap-8 md:gap-16  text-sm font-semibold tracking-wide  whitespace-nowrap min-w-max mx-auto border-b-1 border-white">
+   
+    <nav className="w-full bg-linear-to-b from-brand-purple from-40% to-brand-blue shadow-sm  p-4 py-7 font-robotoMono md:px-25 overflow-x-auto">
+      <div role="tablist" aria-label="Hackathon sections" className="flex justify-center gap-8 md:gap-16  text-sm font-semibold tracking-wide  whitespace-nowrap min-w-max mx-auto border-b border-white">
         {tabs.map((tab, index) => (
           <button
             key={tab.id}
