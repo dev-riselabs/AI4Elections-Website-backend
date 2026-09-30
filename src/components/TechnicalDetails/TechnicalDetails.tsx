@@ -1,8 +1,8 @@
+// import React from "react";
 import About from "./About";
 import CTAPurple from "./CTAPurple";
 import CTACyan from "./CTACyan";
 
-// import React from "react";
 
 function TechnicalDetails() {
   return (

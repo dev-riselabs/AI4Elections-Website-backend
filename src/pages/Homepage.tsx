@@ -6,10 +6,10 @@ import TechnicalDetails from '../components/TechnicalDetails/TechnicalDetails';
 import Footer from '../components/Footer';
 
 const subNavTabs = [
-  { id: 'technical-details', label: 'Technical Details' },
+  { id: 'technical-details', label: 'Technical Briefs' },
   { id: 'concept-document', label: 'Concept Document' },
   { id: 'faq', label: 'FAQ' },
-  { id: 'hackathon', label: 'AI4Elections Hackathon 2026' },
+  { id: 'hackathon', label: '#AI4Elections Hackathon 2026' },
 ] as const;
 
 type SubNavTabId = (typeof subNavTabs)[number]['id'];

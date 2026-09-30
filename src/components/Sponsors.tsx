@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Play, Pause, Sparkles, MoveLeft, MoveRight } from 'lucide-react';
+import { Play, Pause, MoveLeft, MoveRight } from 'lucide-react';
 
 interface Partner {
   id: number;
