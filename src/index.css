@@ -17,11 +17,13 @@
   --color-accent-text: #f18338;
   --color-faq-heading: #011e45;
   --color-faq-number: #4a3aff;
+  --color-header-text : #1D2525;
 
   /* Backgrounds */
   --color-participant-bg: #f4f4f233;
   --color-price-banner: #09294b;
   --color-form-input: #fafafa;
+  --color-form-border :#d7d7d7;
   --color-input-text: #576a69;
 
   
@@ -50,6 +52,8 @@
 
   --color-special-cyan: #00c0e833;
   --color-special-cyan-icon: #00c0e8;
+
+  --color-divider: #F4F3F3;
 
   --text-heading-1: 72px;
   --text-heading-2: 48px;

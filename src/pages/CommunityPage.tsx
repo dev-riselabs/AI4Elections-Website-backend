@@ -1,10 +1,10 @@
-import FormContainer from "../components/ApplicationPage/FormContainer";
-import Header from "../components/ApplicationPage/Header";
-import Hero from "../components/ApplicationPage/Hero";
+import FormContainer from "../components/CommunityPage/FormContainer";
+import Header from "../components/CommunityPage/Header";
+import Hero from "../components/CommunityPage/Hero";
 
-function ApplicationPage() {
+function CommunityPage() {
   return (
-    <div className="font-robotoMono">
+    <div className="font-robotoMono flex flex-col ">
       <div
         className="flex flex-col gap-10 bg-cover bg-no-repeat bg-center "
         style={{
@@ -19,4 +19,4 @@ function ApplicationPage() {
   );
 }
 
-export default ApplicationPage;
+export default CommunityPage;
