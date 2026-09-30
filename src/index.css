@@ -3,6 +3,7 @@
 
 @theme{
   --font-robotoMono : "Roboto Mono", monospace;
+  --font-Mono : "monospace ", Roboto;
 
   
   /* Brand / Accent */
@@ -10,6 +11,7 @@
   --color-brand-purple: #7c3aed;
   --color-accent-orange: #f18338;
   --color-accent-green: #0ea759;
+  
 
   /* Text */
   --color-accent-text: #f18338;
@@ -21,6 +23,8 @@
   --color-price-banner: #09294b;
   --color-form-input: #fafafa;
   --color-input-text: #576a69;
+
+  
 
   /* Podium */
   --color-first-place-border: #f2c85f;
