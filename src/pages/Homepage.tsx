@@ -25,7 +25,6 @@ type SubNavTabId = (typeof subNavTabs)[number]['id'];
 
 function Homepage() {
   const [activeTab, setActiveTab] = useState<SubNavTabId>('technical-details');
-  const selectedTab = subNavTabs.find((tab) => tab.id === activeTab);
 
   return (
    <div className="w-full min-h-screen bg-white text-gray-900 selection:bg-orange-500 selection:text-white font-robotoMono">

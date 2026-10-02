@@ -4,7 +4,6 @@ import StepTwo from "./StepTwo";
 import StepThree from "./StepThree";
 import StepFour from "./StepFour";
 import StepFive from "./StepFive";
-import ApplicationSubmittedModal from "./ApplicationSubmittedModal";
 
 function FormContainer() {
   const [step, setStep] = useState(1);

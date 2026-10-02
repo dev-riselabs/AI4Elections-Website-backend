@@ -1,7 +1,10 @@
 import { IoArrowForwardSharp } from "react-icons/io5";
+import CTACyan from "../TechnicalDetails/CTACyan";
+import CTAPurple from "../TechnicalDetails/CTAPurple";
 
 function Download() {
   return (
+    <>
     <section className="flex flex-col items-center gap-6 pt-10 pb-5 px-4 md:px-25">
       <div className="flex flex-col items-center gap-10">
         <h3 className="text-4xl md:text-heading-2 font-bold text-title-text tracking-tight uppercase">
@@ -18,6 +21,9 @@ function Download() {
         <IoArrowForwardSharp className="w-5 md:w-6 h-5 md:h-6" />
       </button>
     </section>
+    <CTACyan />
+    <CTAPurple />
+    </>
   );
 }
 

@@ -1,7 +1,6 @@
 import { HiOutlineMail } from "react-icons/hi";
 import { IoArrowForwardSharp } from "react-icons/io5";
 import { LuPhone, LuUser } from "react-icons/lu";
-import CommunitySubmittedModal from "./CommunitySubmittedModal";
 
 function FormContainer() {
   return (

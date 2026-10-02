@@ -1,4 +1,4 @@
-import { IoArrowBackOutline, IoArrowForwardSharp } from "react-icons/io5";
+import { IoArrowForwardSharp } from "react-icons/io5";
 
 type StepFiveProps = {
   handleNext: (value: number) => void;
@@ -14,7 +14,7 @@ const commitments = [
   "Misrepresent the capabilities, accuracy or limitations of your solution.",
 ];
 
-function StepFive({ handleNext }: StepFiveProps) {
+function StepFive(_: StepFiveProps) {
   return (
     <div className="flex flex-col rounded-3xl border border-form-border border-t-0 overflow-hidden relative p-4 md:p-8 gap-12">
       <div className="w-full h-1.5 bg-linear-to-r from-[#2563EB] to-[#7C3AED] top-0 left-0 absolute"></div>
