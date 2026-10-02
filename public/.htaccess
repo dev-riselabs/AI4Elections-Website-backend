@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Leave backend API requests to the API server.
+    RewriteRule ^api(?:/|$) - [L,NC]
+
+    # Serve real files and directories directly.
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Let React Router handle client-side routes.
+    RewriteRule ^ index.html [L]
+</IfModule>
