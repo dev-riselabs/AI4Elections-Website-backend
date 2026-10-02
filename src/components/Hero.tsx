@@ -1,4 +1,5 @@
 import { FaArrowRight } from "react-icons/fa";
+import CountdownTimer from "./CountDown";
 export default function Hero() {
   return (
     <section className="w-full h-full md:h-130 lg:h-176 xl:h-260 bg-[url('/hero-bg.png')]  bg-no-repeat bg-cover bg-right md:bg-center font-robotoMono p-2 md:p-6">
@@ -66,6 +67,7 @@ export default function Hero() {
                   Join AI4Elections Dev Hub <FaArrowRight />
                 </button>
               </div>
+              <CountdownTimer/>
             </div>
 
             {/* Right Column */}
