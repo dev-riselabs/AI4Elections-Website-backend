@@ -6,38 +6,55 @@ const topics = [
     id: 1,
     title: "AI & Electoral Information Integrity",
     description:
-      "Develop responsible solutions for detecting, assessing and responding to AI-generated or manipulated electoral information, synthetic media, impersonation and misleading content.",
+      "Solutions for detecting, assessing and responding to AI-generated or manipulated electoral information, synthetic media, impersonation and misleading content.Outputsare expected toinclude information verification tools, provenance systems, multilingual fact-checking assistance and responsible information -analysis systems",
   },
   {
     id: 2,
     title: "Electoral Data Intelligence",
     description:
-      "Develop responsible solutions for improving the collection, analysis and use of electoral data.",
+      "Responsible AI applications for analysing authorised electoral datasets, improving data quality, processing public documents, supporting logistics analysis and identifying data anomalies for human review.Solutions must not independently declare electoral results or substitute algorithmic outputs for legally authorised electoral proc",
   },
   {
     id: 3,
     title: "Inclusive & Multilingual Civic Technology",
     description:
-      "Develop inclusive and multilingual technologies that improve civic participation and access to electoral information.",
+      "Accessible voter-information tools, Nigerian-language electoral and civic information, assistive interfacesfor people with disabilities, digital literacy solutions and technology addressing barriers to electoral participa",
   },
   {
     id: 4,
     title: "Electoral Cybersecurity & Resilience",
     description:
-      "Develop solutions that strengthen electoral systems against cybersecurity threats and improve resilience.",
+      `Defensive tools, authorised simulations, security monitoring concepts, privacy -preserving systems and resilience approaches 
+for electoral technology. No testing of live electoral systems or unauthorised access to institutional infrastructure will be 
+permitted.This track specifically invites participants to develop responsible, defensive and privacy -preserving technologies 
+that can strengthen cybersecurity awareness, digital resilience, secure information management and the protection of 
+electoral and civic technology environments. Sol utions may include defensive security monitoring concepts, secure -by-design 
+applications, privacy-preserving systems, incident reporting and response tools, cybersecurity awareness platforms, security 
+training resources, authorised simulations and resilien ce models for electoral technology. Participants may also develop tools 
+for identifying common security weaknesses in their own applications, improving secure software development practices, 
+supporting incident documentation, or modelling potential operati onal disruptions using synthetic datasets and isolated test 
+environments`,
   },
   {
     id: 5,
     title: "Election Observation & Citizen Accountability",
     description:
-      "Develop technologies that support election observation, citizen participation and accountability.",
+      `Tools for structured observation reporting, incident documentation, civic feedback, public information access and transparenc y, 
+with appropriate safeguards for observers and citizens. Final problem statements will be developed with relevant subject -matter 
+experts and prospective institutional partners. Participation by an institution will not imply endorsement of any so
+The Programme welcomes responsible innovation, particularly where technology can contribute to voter education, 
+accessibility, operational efficiency, public information and greater citizen understanding of the electoral process. Partici pants 
+are encouraged to develop solutions for improving voter education, simplifying electoral information, improving accessibility, 
+helping citizens locate and understand publicly available electoral information, supporting election training, analysing 
+publicly available election data, or modelling election logistics using simulated datasets. Where data is required, the 
+preference should be for publicly available, anonymised, aggregated or synthetic`,
   },
-  {
-    id: 6,
-    title: "Electoral Technology",
-    description:
-      "Develop innovative technologies that improve electoral processes and strengthen democratic participation.",
-  },
+  // {
+  //   id: 6,
+  //   title: "Electoral Technology",
+  //   description:
+  //     "Develop innovative technologies that improve electoral processes and strengthen democratic participation.",
+  // },
 ];
 
 function ChallengeArea() {

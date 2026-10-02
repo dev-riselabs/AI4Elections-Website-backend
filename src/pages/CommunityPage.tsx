@@ -1,6 +1,8 @@
+import Header from "../components/ApplicationPage/Header";
 import FormContainer from "../components/CommunityPage/FormContainer";
-import Header from "../components/CommunityPage/Header";
+
 import Hero from "../components/CommunityPage/Hero";
+import Footer from "../components/Footer";
 
 function CommunityPage() {
   return (
@@ -15,6 +17,7 @@ function CommunityPage() {
         <Hero />
       </div>
       <FormContainer/>
+      <Footer/>
     </div>
   );
 }
