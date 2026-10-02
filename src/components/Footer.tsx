@@ -152,7 +152,7 @@ const Footer: React.FC = () => {
             <img
               src="/risenetworks_footer_logo.png"
               alt="Rise Networks"
-              className="w-[25vw] md:w-[15vw] object-contain"
+              className="w-[70vw] md:w-[15vw] object-contain"
             />
           </div>
 
@@ -164,10 +164,9 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="mx-auto max-w-7xl px-4 pb-8 pt-12 md:px-10 xl:px-6">
-
+      <div className="mx-auto max-w-7xl px-4 pb-8 md:pt-12 md:px-10 xl:px-6">
         <div className="grid gap-6 md:grid-cols-12   xl:gap-8">
-          <div className="col-span-9 mt-10 grid gap-6 md:grid-cols-3 lg:grid-cols-4 xl:gap-8">
+          <div className="md:col-span-9 mt-7 md:mt-10 grid gap-6 md:grid-cols-3 lg:grid-cols-4 xl:gap-8">
             {footerGroups.map((group) => (
               <div key={group.title}>
                 <h3 className="mb-4 text-[12px] font-bold tracking-[0.06em] text-[#f5a15b] md:text-[13px]">
@@ -216,7 +215,7 @@ const Footer: React.FC = () => {
               </div>
             ))}
           </div>
-          <div className="mt-10 xl:pl-4 col-span-3">
+          <div className="mt-10 xl:pl-4 md:col-span-3">
             <div className="text-right space-y-4 text-[13px] text-white md:text-[14px]">
               <div className="font-medium">+234.706.054.5027</div>
               <div className="font-light md:text-xs">info@risenetworks.org</div>
@@ -233,7 +232,7 @@ const Footer: React.FC = () => {
               <img
                 src="/NGOsource ED on File Image.png"
                 alt="NGOsource equivalency determination"
-                className="w-[10vw]  rounded-lg border border-[#7aa6ff] bg-[#0f1624] object-contain"
+                className="w-[60vw] md:w-[10vw]  rounded-lg border border-[#7aa6ff] bg-[#0f1624] object-contain"
               />
               <div className="mt-3 text-sm font-semibold uppercase tracking-[0.08em] text-white">
                 Equivalency Determination on File Badge
@@ -249,11 +248,11 @@ const Footer: React.FC = () => {
 
         <div className="mt-10 border-t border-white/80 pt-5">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <div className="flex flex-wrap items-center gap-4 text-[12px] text-white md:text-[13px]">
+            <div className="flex flex-wrap text-center justify-center items-center gap-4 text-[12px] text-white md:text-[13px]">
               <span>© Copyright 2025. Rise Networks | All Rights Reserved</span>
               <a
                 href="#terms-and-conditions"
-                className="transition-colors hover:text-[#f5a15b]"
+                className="transition-colors  hover:text-[#f5a15b]"
               >
                 Terms and Conditions
               </a>
@@ -265,7 +264,7 @@ const Footer: React.FC = () => {
               </a>
             </div>
 
-            <div className="flex items-center gap-4 text-white">
+            <div className="flex justify-center items-center gap-4 text-white">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}

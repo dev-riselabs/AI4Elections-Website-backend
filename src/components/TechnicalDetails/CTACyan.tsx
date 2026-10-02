@@ -1,5 +1,6 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router";
 
 const CTACyan: React.FC = () => {
   return (
@@ -8,7 +9,6 @@ const CTACyan: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 items-center">
           {/* Left Side: Align items center */}
           <div className="flex flex-col justify-center items-start px-4 md:pr-0 md:pl-[8vw] py-8 mt-4 xl:mt-15 space-y-5 md:space-y-3">
-            
             <h2 className="text-gray-900 text-[7vw] md:text-[2.4vw] xl:text-[2.5vw] font-bold uppercase tracking-wide leading-tight ">
               STAY BEYOND THE <br /> HACKATHON.
             </h2>
@@ -20,9 +20,13 @@ const CTACyan: React.FC = () => {
             </p>
 
             <div className="pt-2">
-              <button className="flex items-center gap-4 bg-accent-text hover:bg-orange-600 transition-all duration-200 text-white text-xs md:text-[1.2vw] px-4 md:px-5 py-3 rounded-lg font-semibold shadow-lg hover:shadow-orange-500/30 hover:-translate-y-0.5 cursor-pointer">
-                Join AI4Elections Dev Hub <FaArrowRight />
-              </button>
+              <Link
+                to="/community-page"
+                className="flex items-center gap-4 bg-accent-text hover:bg-orange-600 transition-all duration-200 text-white text-xs md:text-[1.2vw] px-4 md:px-5 py-3 rounded-lg font-semibold shadow-lg hover:shadow-orange-500/30 hover:-translate-y-0.5 cursor-pointer"
+              >
+                Join AI4Elections Dev Hub
+                <FaArrowRight />
+              </Link>
             </div>
           </div>
 

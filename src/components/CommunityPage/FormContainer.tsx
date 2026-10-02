@@ -166,7 +166,7 @@ function FormContainer() {
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3">
               <input type="checkbox" name="" id="" />
-              <label htmlFor="" className="text-header-text text-sm md:text-base">
+              <label htmlFor="" className="text-header-text text-xs md:text-base">
                 I agree to join the #AI4Elections Community of Practice and allow my information to be used to facilitate relevant community activities, collaboration, mentorship and research opportunities.
               </label>
             </div>
@@ -183,7 +183,7 @@ function FormContainer() {
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3">
               <input type="checkbox" name="" id="" />
-              <label htmlFor="" className="text-header-text text-sm md:text-base">
+              <label htmlFor="" className="text-header-text text-xs md:text-base">
                I would like to receive relevant #AI4Elections community updates and opportunities by email.
               </label>
             </div>

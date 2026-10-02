@@ -5,11 +5,11 @@ function FaqContainer() {
   return (
     <>
       <section
-        className="bg-no-repeat bg-center bg-cover flex flex-col items-center gap-10 py-10 px-4 md:px-25"
+        className="bg-no-repeat bg-center bg-cover flex flex-col items-center gap-6 md:gap-10 py-10 px-4 md:px-25"
         style={{ backgroundImage: "url('/applicant_faq_bg.png')" }}
       >
-        <div className="flex flex-col items-center gap-6 md:gap-10">
-          <h3 className="text-4xl md:text-heading-2 font-bold text-center text-title-text tracking-tight uppercase leading-10 md:leading-12">
+        <div className="flex flex-col items-center gap-4 md:gap-10">
+          <h3 className="text-[6vw] md:text-4xl md:text-heading-2 font-bold text-center text-title-text tracking-tight uppercase leading-8 md:leading-12">
             #AI4Elections Hackathon <br />
             2026 - 2027 - Applicant FAQs
           </h3>
@@ -22,7 +22,7 @@ function FaqContainer() {
           </p>
         </div>
         <div className="flex flex-col w-full">
-          <div className="flex gap-3 md:gap-5 p-4 md:py-8 md:px-5">
+          <div className="flex gap-3 md:gap-5 md:p-4 md:py-8 md:px-5">
             <span className="text-base md:text-lg text-faq-number font-bold">
               01
             </span>

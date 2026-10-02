@@ -2,7 +2,7 @@ import { FaArrowRight } from "react-icons/fa";
 import CountdownTimer from "./CountDown";
 export default function Hero() {
   return (
-    <section className="w-full h-full md:h-130 lg:h-176 xl:h-260 bg-[url('/hero-bg.png')]  bg-no-repeat bg-cover bg-right md:bg-center font-robotoMono p-2 md:p-6">
+    <section className="w-full h-full md:h-145 lg:h-176 xl:h-260 bg-[url('/hero-bg.png')]  bg-no-repeat bg-cover bg-right md:bg-center font-robotoMono p-2 md:p-6">
       {/* Top Bar (Navbar): Flex container with three distinct sections */}
       <header className="w-full ">
         <div className="mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
@@ -59,7 +59,7 @@ export default function Hero() {
                 inclusion and democratic participation in Nigeria.
               </p>
 
-              <div className="flex flex-wrap items-center gap-4 pt-2 px-2 md:px-6 lg:pl-10">
+              <div className="flex flex-wrap items-center gap-4 md:mb-4 pt-2 px-2 md:px-6 lg:pl-10">
                 <button className="flex gap-8 md:gap-4  text-center items-center bg-accent-text hover:bg-orange-500 transition-all duration-200 md:text-[1.4vw] text-white px-16 md:px-4 lg:px-12 py-3 rounded-lg font-semibold shadow-lg hover:shadow-orange-500/30 hover:-translate-y-0.5 cursor-pointer">
                   APPLY NOW ! <FaArrowRight />
                 </button>
@@ -67,7 +67,8 @@ export default function Hero() {
                   Join AI4Elections Dev Hub <FaArrowRight />
                 </button>
               </div>
-              <CountdownTimer/>
+              <CountdownTimer />
+              
             </div>
 
             {/* Right Column */}

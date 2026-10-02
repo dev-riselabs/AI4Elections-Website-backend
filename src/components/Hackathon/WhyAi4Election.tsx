@@ -11,7 +11,7 @@ function WhyAi4Election() {
       style={{ backgroundImage: "url('/why_ai4election_bg.png')" }}
     >
       <div className="flex flex-col gap-4 md:gap-6 items-center ">
-        <h2 className="text-4xl md:text-heading-2 font-bold text-white tracking-tight uppercase">
+        <h2 className="text-3xl md:text-heading-2 font-bold text-white tracking-tight uppercase">
           WHY AI4ELECTIONS
         </h2>
         <p className="text-white text-sm md:text-lg font-medium text-center max-w-[70ch]">
