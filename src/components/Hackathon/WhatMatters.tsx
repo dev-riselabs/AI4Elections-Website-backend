@@ -8,6 +8,8 @@
 // } from "react-icons/fa";
 // import { HiMiniTrophy } from "react-icons/hi2";
 
+import CTACyan from "../TechnicalDetails/CTACyan";
+
 // const mainPrizes = [
 //   {
 //     position: "1ST PLACE",
@@ -73,17 +75,17 @@
 // function WhatMatters() {
 //   return (
 //      <section className="relative overflow-hidden px-4 py-12 md:px-25 bg-center bg-cover bg-no-repeat flex flex-col gap-7 md:gap-10" style={{backgroundImage : "url('/win_big_bg.png')"}}>
-      
+
 //         {/* Heading */}
 //         <div className="flex flex-col gap-4 md:gap-6 items-center ">
 //         <h2 className="text-4xl md:text-heading-2 font-bold text-heading-text tracking-tight uppercase">
 //         win big. build what matters.
 //         </h2>
 //         <p className="text-heading-text text-sm md:text-lg font-medium text-center">
-//           Prize money will be awarded to winning teams, not individual members. 
+//           Prize money will be awarded to winning teams, not individual members.
 // Each team will designate a recipient and agree on how the funds will be distributed.
 //         </p>
-        
+
 //       </div>
 
 //         {/* Prize Pool */}
@@ -198,8 +200,6 @@
 
 // export default WhatMatters
 
-
-
 const grandPrizes = [
   {
     amount: "₦2,000,000",
@@ -242,7 +242,13 @@ const specialAwards = [
   },
 ];
 
-function GrandPrizeCard({ amount, description } : {amount : string; description: string}) {
+function GrandPrizeCard({
+  amount,
+  description,
+}: {
+  amount: string;
+  description: string;
+}) {
   return (
     <div className="p-5 sm:p-6">
       <p className="mb-3 text-[11px] font-medium text-orange-400">
@@ -260,12 +266,18 @@ function GrandPrizeCard({ amount, description } : {amount : string; description:
   );
 }
 
-function SpecialAwardCard({ title, amount, description }: {amount : string; description: string; title: string;}) {
+function SpecialAwardCard({
+  title,
+  amount,
+  description,
+}: {
+  amount: string;
+  description: string;
+  title: string;
+}) {
   return (
     <div className="rounded-2xl border border-white/50 p-5 sm:p-6">
-      <p className="mb-3 text-[11px] font-medium text-orange-400">
-        {title}
-      </p>
+      <p className="mb-3 text-[11px] font-medium text-orange-400">{title}</p>
 
       <h3 className="mb-3 font-mono text-xl font-bold tracking-wide text-white sm:text-[21px]">
         {amount}
@@ -280,62 +292,65 @@ function SpecialAwardCard({ title, amount, description }: {amount : string; desc
 
 export default function Awards() {
   return (
-    <section className="min-h-screen bg-[#080b20] px-5 py-16 text-white sm:px-8 lg:px-[7%]">
-      <div className="mx-auto max-w-7xl">
-        {/* Header */}
-        <div className="mb-6">
-          <p className="mb-3 font-mono text-xs font-medium text-orange-400">
-            Awards
-          </p>
+    <>
+      <section className="min-h-screen bg-[#080b20] px-5 py-16 text-white sm:px-8 lg:px-[7%]">
+        <div className="mx-auto max-w-7xl">
+          {/* Header */}
+          <div className="mb-6">
+            <p className="mb-3 font-mono text-xs font-medium text-orange-400">
+              Awards
+            </p>
 
-          <h2 className="mb-3 font-mono text-2xl font-bold tracking-wide sm:text-3xl">
-            ₦5 MILLION PRIZE POOL
-          </h2>
+            <h2 className="mb-3 font-mono text-2xl font-bold tracking-wide sm:text-3xl">
+              ₦5 MILLION PRIZE POOL
+            </h2>
 
-          <p className="max-w-5xl font-mono text-[10px] leading-5 text-white/90 sm:text-[11px]">
-            Prize money will be awarded to winning teams, not individual
-            members.
-            <br className="hidden sm:block" />
-            A team that wins an overall prize could also win a special award,
-            provided it meets the criteria as that allows
-            <br className="hidden lg:block" />
-            exceptional teams to receive more than one award while maintaining
-            a transparent judging framework.
-          </p>
-        </div>
+            <p className="max-w-5xl font-mono text-[10px] leading-5 text-white/90 sm:text-[11px]">
+              Prize money will be awarded to winning teams, not individual
+              members.
+              <br className="hidden sm:block" />
+              A team that wins an overall prize could also win a special award,
+              provided it meets the criteria as that allows
+              <br className="hidden lg:block" />
+              exceptional teams to receive more than one award while maintaining
+              a transparent judging framework.
+            </p>
+          </div>
 
-        {/* Grand Prizes */}
-        <div className="mb-9 overflow-hidden rounded-2xl border border-white/60">
-          <div className="grid grid-cols-1 divide-y divide-white/50 md:grid-cols-3 md:divide-x md:divide-y-0">
-            {grandPrizes.map((prize) => (
-              <GrandPrizeCard
-                key={prize.amount}
-                amount={prize.amount}
-                description={prize.description}
+          {/* Grand Prizes */}
+          <div className="mb-9 overflow-hidden rounded-2xl border border-white/60">
+            <div className="grid grid-cols-1 divide-y divide-white/50 md:grid-cols-3 md:divide-x md:divide-y-0">
+              {grandPrizes.map((prize) => (
+                <GrandPrizeCard
+                  key={prize.amount}
+                  amount={prize.amount}
+                  description={prize.description}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Special Awards heading */}
+          <div className="mb-5">
+            <p className="font-mono text-xs tracking-wide text-white">
+              - SPECIAL INNOVATION AWARDS
+            </p>
+          </div>
+
+          {/* Special Awards */}
+          <div className="grid grid-cols-1 gap-3.5 md:grid-cols-2">
+            {specialAwards.map((award) => (
+              <SpecialAwardCard
+                key={award.title}
+                title={award.title}
+                amount={award.amount}
+                description={award.description}
               />
             ))}
           </div>
         </div>
-
-        {/* Special Awards heading */}
-        <div className="mb-5">
-          <p className="font-mono text-xs tracking-wide text-white">
-            - SPECIAL INNOVATION AWARDS
-          </p>
-        </div>
-
-        {/* Special Awards */}
-        <div className="grid grid-cols-1 gap-3.5 md:grid-cols-2">
-          {specialAwards.map((award) => (
-            <SpecialAwardCard
-              key={award.title}
-              title={award.title}
-              amount={award.amount}
-              description={award.description}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
+      </section>
+      <CTACyan />
+    </>
   );
 }

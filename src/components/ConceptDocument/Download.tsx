@@ -21,8 +21,8 @@ function Download() {
         <IoArrowForwardSharp className="w-5 md:w-6 h-5 md:h-6" />
       </button>
     </section>
-    <CTACyan />
     <CTAPurple />
+    <CTACyan />
     </>
   );
 }
