@@ -145,7 +145,7 @@ const socialLinks = [
 
 const Footer: React.FC = () => {
   return (
-    <footer className="w-full bg-black text-white font-roboto">
+    <footer className="w-full bg-black text-white font-roboto md:pt-14">
       <div className="mx-auto xl:max-w-7xl px-4 pt-12 md:px-10 xl:px-6">
         <div className="flex flex-col gap-8 md:flex-row items-center">
           <div className="flex justify-center xl:justify-start">
