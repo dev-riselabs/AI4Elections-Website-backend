@@ -22,13 +22,13 @@ function StepThree({ handleNext }: StepThreeProps) {
               </label>
               <div className="flex items-center gap-y-4 gap-x-12 flex-wrap">
                 <div className="flex items-center gap-3">
-                  <input type="checkbox" name="" id="" />
+                  <input type="radio" name="has_solution_idea" value="true" />
                   <label htmlFor="" className="text-header-text text-sm md:text-base">
                     Yes, I have an idea
                   </label>
                 </div>
                 <div className="flex items-center gap-3">
-                  <input type="checkbox" name="" id="" />
+                  <input type="radio" name="has_solution_idea" value="false" />
                   <label htmlFor="" className="text-header-text text-sm md:text-base">
                     No, I would like to develop an idea during the programme
                   </label>
@@ -42,7 +42,7 @@ function StepThree({ handleNext }: StepThreeProps) {
               >
                 If Yes, what problem are you trying to solve? *
               </label>
-              <textarea className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
+              <textarea name="problem_to_solve" className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
             </div>
             <div className="flex flex-col gap-2 ">
               <label
@@ -51,7 +51,7 @@ function StepThree({ handleNext }: StepThreeProps) {
               >
                 Who is affected by this problem? *
               </label>
-              <textarea className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
+              <textarea name="affected_people" className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
             </div>
             <div className="flex flex-col gap-2 ">
               <label
@@ -60,7 +60,7 @@ function StepThree({ handleNext }: StepThreeProps) {
               >
                 Describe your proposed solution *
               </label>
-              <textarea className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
+              <textarea name="proposed_solution" className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
             </div>
             <div className="flex flex-col gap-2 ">
               <label
@@ -69,7 +69,7 @@ function StepThree({ handleNext }: StepThreeProps) {
               >
                 How would AI or technology contribute to the solution? *
               </label>
-              <textarea className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
+              <textarea name="technology_contribution" className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
             </div>
             <div className="flex flex-col gap-2 ">
               <label
@@ -78,7 +78,7 @@ function StepThree({ handleNext }: StepThreeProps) {
               >
                 Who would benefit from the solution? *
               </label>
-              <textarea className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
+              <textarea name="beneficiaries" className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
             </div>
             <div className="flex flex-col gap-2 ">
               <label
@@ -87,7 +87,7 @@ function StepThree({ handleNext }: StepThreeProps) {
               >
                 What makes your approach different or useful? *
               </label>
-              <textarea className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
+              <textarea name="differentiation" className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
             </div>
 
             <div className="flex flex-col gap-2 ">
@@ -99,43 +99,43 @@ function StepThree({ handleNext }: StepThreeProps) {
               </label>
               <div className="flex items-center gap-x-12 gap-y-6 flex-wrap">
                 <div className="flex items-center gap-3">
-                  <input type="checkbox" name="" id="" />
+                  <input type="checkbox" name="idea_stage[]" value="Idea only" />
                   <label htmlFor="" className="text-header-text text-sm md:text-base">
                     Idea only
                   </label>
                 </div>
                 <div className="flex items-center gap-3">
-                  <input type="checkbox" name="" id="" />
+                  <input type="checkbox" name="idea_stage[]" value="Research completed" />
                   <label htmlFor="" className="text-header-text text-sm md:text-base">
                     Research completed
                   </label>
                 </div>
                 <div className="flex items-center gap-3">
-                  <input type="checkbox" name="" id="" />
+                  <input type="checkbox" name="idea_stage[]" value="Early concept" />
                   <label htmlFor="" className="text-header-text text-sm md:text-base">
                     Early concept
                   </label>
                 </div>
                 <div className="flex items-center gap-3">
-                  <input type="checkbox" name="" id="" />
+                  <input type="checkbox" name="idea_stage[]" value="Working prototype" />
                   <label htmlFor="" className="text-header-text text-sm md:text-base">
                     Working prototype
                   </label>
                 </div>
                 <div className="flex items-center gap-3">
-                  <input type="checkbox" name="" id="" />
+                  <input type="checkbox" name="idea_stage[]" value="Prototype" />
                   <label htmlFor="" className="text-header-text text-sm md:text-base">
                     Prototype
                   </label>
                 </div>
                 <div className="flex items-center gap-3">
-                  <input type="checkbox" name="" id="" />
+                  <input type="checkbox" name="idea_stage[]" value="Existing product/project" />
                   <label htmlFor="" className="text-header-text text-sm md:text-base">
                     Existing product/project
                   </label>
                 </div>
                 <div className="flex items-center gap-3">
-                  <input type="checkbox" name="" id="" />
+                  <input type="checkbox" name="idea_stage[]" value="Research project" />
                   <label htmlFor="" className="text-header-text text-sm md:text-base">
                     Research project
                   </label>
@@ -152,13 +152,13 @@ function StepThree({ handleNext }: StepThreeProps) {
               </label>
               <div className="flex items-center gap-y-4 gap-x-12 flex-wrap">
                 <div className="flex items-center gap-3">
-                  <input type="checkbox" name="" id="" />
+                  <input type="radio" name="has_prototype" value="true" />
                   <label htmlFor="" className="text-header-text text-sm md:text-base">
                     Yes
                   </label>
                 </div>
                 <div className="flex items-center gap-3">
-                  <input type="checkbox" name="" id="" />
+                  <input type="radio" name="has_prototype" value="false" />
                   <label htmlFor="" className="text-header-text text-sm md:text-base">
                     No
                   </label>
@@ -177,6 +177,7 @@ function StepThree({ handleNext }: StepThreeProps) {
                 {/* <LuPhone className="w-5 md:w-6 h-5 md:h-6" /> */}
                 <input
                   type="url"
+                  name="prototype_link"
                   placeholder="URL"
                   className="text-sm md:text-base text-input-text outline-none"
                 />
@@ -190,14 +191,14 @@ function StepThree({ handleNext }: StepThreeProps) {
       </div>
 
       <div className="flex gap-4 md:gap-6 items-center">
-        <button
+        <button type="button"
           onClick={() => handleNext(2)}
           className="flex items-center gap-2 border-3 h-14 flex-1 border-special-green-icon text-special-green-icon font-bold text-sm md:text-lg rounded-md px-6 py-3 justify-center min-w-0"
         >
           <IoArrowBackOutline className="w-5 md:w-6 h-5 md:h-6" />
           Previous
         </button>
-        <button
+        <button type="button"
           onClick={() => handleNext(4)}
           className="flex items-center gap-2 h-14 flex-1 bg-accent-orange text-white font-bold text-sm md:text-lg rounded-md px-6 py-3 justify-center min-w-0"
         >

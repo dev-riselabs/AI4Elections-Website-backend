@@ -28,6 +28,7 @@ function StepOne({handleNext} : StepOneProps) {
                 <LuUser className="w-5 md:w-6 h-5 md:h-6" />
                 <input
                   type="text"
+                  name="first_name"
                   placeholder="John"
                   className="text-sm md:text-base text-input-text outline-none"
                 />
@@ -44,6 +45,7 @@ function StepOne({handleNext} : StepOneProps) {
                 <LuUser className="w-5 md:w-6 h-5 md:h-6" />
                 <input
                   type="text"
+                  name="last_name"
                   placeholder="Doe"
                   className="text-sm md:text-base text-input-text outline-none"
                 />
@@ -60,6 +62,7 @@ function StepOne({handleNext} : StepOneProps) {
                 <HiOutlineMail className="w-5 md:w-6 h-5 md:h-6" />
                 <input
                   type="email"
+                  name="email"
                   placeholder="johndoe@example.com"
                   className="text-sm md:text-base text-input-text outline-none"
                 />
@@ -76,6 +79,7 @@ function StepOne({handleNext} : StepOneProps) {
                 <LuPhone className="w-5 md:w-6 h-5 md:h-6" />
                 <input
                   type="text"
+                  name="phone"
                   placeholder="(555) 123-5672"
                   className="text-sm md:text-base text-input-text outline-none"
                 />
@@ -89,8 +93,8 @@ function StepOne({handleNext} : StepOneProps) {
               >
                 What best describe your application? *
               </label>
-              <select className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
-                <option value="">Select</option>
+              <select name="application_type" className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
+                <option value="">Select</option><option value="Individual">Individual</option><option value="Team">Team</option><option value="Organization">Organization</option>
               </select>
             </div>
           </div>
@@ -109,7 +113,7 @@ function StepOne({handleNext} : StepOneProps) {
               >
                 Tell us about your experience *
               </label>
-              <textarea className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none"></textarea>
+              <textarea name="experience_summary" className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none"></textarea>
             </div>
             <div className="flex flex-col gap-2">
               <label
@@ -118,9 +122,7 @@ function StepOne({handleNext} : StepOneProps) {
               >
                Primary Area of Expertise *
               </label>
-              <select className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
-                <option value="">Select</option>
-              </select>
+              <input name="primary_expertise" type="text" placeholder="Enter your primary expertise" className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 outline-none" />
             </div>
             <div className="flex flex-col gap-2">
               <label
@@ -133,6 +135,8 @@ function StepOne({handleNext} : StepOneProps) {
                 <TbBriefcase2 className="w-5 md:w-6 h-5 md:h-6" />
                 <input
                   type="text"
+                  name="years_experience"
+                  inputMode="numeric"
                   placeholder="4"
                   className="text-sm md:text-base text-input-text outline-none"
                 />
@@ -149,6 +153,7 @@ function StepOne({handleNext} : StepOneProps) {
                 {/* <TbBriefcase2 className="w-5 md:w-6 h-5 md:h-6" /> */}
                 <input
                   type="text"
+                  name="current_role"
                   placeholder="Enter your current role"
                   className="text-sm md:text-base text-input-text outline-none flex-1"
                 />
@@ -165,6 +170,7 @@ function StepOne({handleNext} : StepOneProps) {
                 {/* <TbBriefcase2 className="w-5 md:w-6 h-5 md:h-6" /> */}
                 <input
                   type="text"
+                  name="organization"
                   placeholder="Enter organisation or institution"
                   className="text-sm md:text-base text-input-text outline-none flex-1"
                 />
@@ -177,9 +183,7 @@ function StepOne({handleNext} : StepOneProps) {
               >
                Highest level of Education *
               </label>
-              <select className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
-                <option value="">Select</option>
-              </select>
+              <input name="education_level" type="text" placeholder="Enter your highest education level" className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 outline-none" />
             </div>
             <div className="flex flex-col gap-2">
               <label
@@ -192,6 +196,7 @@ function StepOne({handleNext} : StepOneProps) {
                 {/* <TbBriefcase2 className="w-5 md:w-6 h-5 md:h-6" /> */}
                 <input
                   type="text"
+                  name="academic_field"
                   placeholder="Enter your field"
                   className="text-sm md:text-base text-input-text outline-none flex-1"
                 />
@@ -204,7 +209,7 @@ function StepOne({handleNext} : StepOneProps) {
         {/* divider */}
         <div className="max-w-147.25 bg-divider w-full h-0.5"></div>
       </div>
-      <button onClick={()=> handleNext(2)} className="flex items-center gap-2 bg-accent-orange text-white font-bold text-lg rounded-md px-6 py-3 justify-center">
+      <button type="button" onClick={()=> handleNext(2)} className="flex items-center gap-2 bg-accent-orange text-white font-bold text-lg rounded-md px-6 py-3 justify-center">
         Next
         <IoArrowForwardSharp className="w-5 md:w-6 h-5 md:h-6" />
       </button>

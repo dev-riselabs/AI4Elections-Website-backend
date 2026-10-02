@@ -23,8 +23,8 @@ function StepFour({ handleNext }: StepFourProps) {
               >
                 What type of collaborator would you like to work with?
               </label>
-              <select className="rounded-xl text-sm md:text-base bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
-                <option value="">Select</option>
+              <select name="collaborator_type" className="rounded-xl text-sm md:text-base bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
+                <option value="">Select</option><option value="Designer">Designer</option><option value="Developer">Developer</option><option value="Researcher">Researcher</option><option value="Policy specialist">Policy specialist</option><option value="Other">Other</option>
               </select>
             </div>
             <div className="flex flex-col gap-2 ">
@@ -36,13 +36,13 @@ function StepFour({ handleNext }: StepFourProps) {
               </label>
               <div className="flex items-center gap-12 flex-wrap">
                 <div className="flex items-center gap-3">
-                  <input type="checkbox" name="" id="" />
+                  <input type="radio" name="team_matching" value="true" />
                   <label htmlFor="" className="text-header-text text-sm md:text-base">
                     Yes
                   </label>
                 </div>
                 <div className="flex items-center gap-3">
-                  <input type="checkbox" name="" id="" />
+                  <input type="radio" name="team_matching" value="false" />
                   <label htmlFor="" className="text-header-text text-sm md:text-base">
                     No
                   </label>
@@ -72,6 +72,7 @@ function StepFour({ handleNext }: StepFourProps) {
                 {/* <LuUser className="w-5 md:w-6 h-5 md:h-6" /> */}
                 <input
                   type="text"
+                  name="team_name"
                   placeholder=""
                   className="text-header-text text-sm md:text-base outline-none"
                 />
@@ -88,6 +89,7 @@ function StepFour({ handleNext }: StepFourProps) {
                 <LuUser className="w-5 md:w-6 h-5 md:h-6" />
                 <input
                   type="text"
+                  name="team_lead"
                   placeholder=""
                   className="text-header-text text-sm md:text-base outline-none"
                 />
@@ -104,6 +106,8 @@ function StepFour({ handleNext }: StepFourProps) {
                 <LuUser className="w-5 md:w-6 h-5 md:h-6" />
                 <input
                   type="text"
+                  name="team_size"
+                  inputMode="numeric"
                   placeholder="4"
                   className="text-header-text text-sm md:text-base outline-none"
                 />
@@ -116,7 +120,7 @@ function StepFour({ handleNext }: StepFourProps) {
               >
                 Team Description
               </label>
-              <textarea className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
+              <textarea name="team_description" className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
             </div>
             <div className="flex flex-col gap-2 md:col-span-2">
               <label
@@ -126,7 +130,7 @@ function StepFour({ handleNext }: StepFourProps) {
                 Names and Role of Team Members ( use (,) after each name and
                 role)
               </label>
-              <textarea className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
+              <textarea name="team_members" className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
             </div>
           </div>
         </div>
@@ -150,13 +154,13 @@ function StepFour({ handleNext }: StepFourProps) {
               </label>
               <div className="flex items-center gap-12 flex-wrap">
                 <div className="flex items-center gap-3">
-                  <input type="checkbox" name="" id="" />
+                  <input type="radio" name="accessibility_requirements" value="true" />
                   <label htmlFor="" className="text-header-text text-sm md:text-base">
                     Yes
                   </label>
                 </div>
                 <div className="flex items-center gap-3">
-                  <input type="checkbox" name="" id="" />
+                  <input type="radio" name="accessibility_requirements" value="false" />
                   <label htmlFor="" className="text-header-text text-sm md:text-base">
                     No
                   </label>
@@ -170,7 +174,7 @@ function StepFour({ handleNext }: StepFourProps) {
               >
                 If yes, please tell us what support you may require
               </label>
-              <textarea className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
+              <textarea name="accessibility_support" className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
             </div>
           </div>
         </div>
@@ -181,6 +185,7 @@ function StepFour({ handleNext }: StepFourProps) {
 
       <div className="flex gap-6 items-center">
         <button
+          type="button"
           onClick={() => handleNext(3)}
           className="flex items-center gap-2 border-3 h-14 flex-1 border-special-green-icon text-special-green-icon font-bold text-sm md:text-lg rounded-md px-6 py-3 justify-center min-w-0"
         >
@@ -188,6 +193,7 @@ function StepFour({ handleNext }: StepFourProps) {
           Previous
         </button>
         <button
+          type="button"
           onClick={() => handleNext(5)}
           className="flex items-center gap-2 h-14 flex-1 bg-accent-orange text-white font-bold text-sm md:text-lg rounded-md px-6 py-3 justify-center min-w-0"
         >

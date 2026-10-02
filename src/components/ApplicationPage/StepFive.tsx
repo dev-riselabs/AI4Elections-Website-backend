@@ -1,7 +1,7 @@
 import { IoArrowForwardSharp } from "react-icons/io5";
 
 type StepFiveProps = {
-  handleNext: (value: number) => void;
+  isSubmitting: boolean;
 };
 
 const commitments = [
@@ -14,7 +14,7 @@ const commitments = [
   "Misrepresent the capabilities, accuracy or limitations of your solution.",
 ];
 
-function StepFive(_: StepFiveProps) {
+function StepFive({ isSubmitting }: StepFiveProps) {
   return (
     <div className="flex flex-col rounded-3xl border border-form-border border-t-0 overflow-hidden relative p-4 md:p-8 gap-12">
       <div className="w-full h-1.5 bg-linear-to-r from-[#2563EB] to-[#7C3AED] top-0 left-0 absolute"></div>
@@ -61,7 +61,7 @@ function StepFive(_: StepFiveProps) {
           <h3 className="text-xl md:text-2xl text-price-banner">Confirmation *</h3>
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3">
-              <input type="checkbox" name="" id="" />
+              <input type="checkbox" name="responsible_participation_confirmed" value="true" />
               <label htmlFor="" className="text-header-text text-sm md:text-base">
                 I have read and understand the responsible participation
                 requirements.
@@ -102,21 +102,21 @@ function StepFive(_: StepFiveProps) {
         {/* checkbox */}
         <div className="flex flex-col gap-4 pb-3">
           <div className="flex items-center gap-3">
-            <input type="checkbox" name="" id="" />
+            <input type="checkbox" name="information_accurate" value="true" />
             <label htmlFor="" className="text-header-text text-sm md:text-base">
               I confirm that the information provided in this application is
               accurate to the best of my knowledge.
             </label>
           </div>
           <div className="flex items-center gap-3">
-            <input type="checkbox" name="" id="" />
+            <input type="checkbox" name="privacy_consent" value="true" />
             <label htmlFor="" className="text-header-text text-sm md:text-base">
               I agree to the processing of my information for the purposes
               described in the Privacy Notice.
             </label>
           </div>
           <div className="flex items-center gap-3">
-            <input type="checkbox" name="" id="" />
+            <input type="checkbox" name="community_opt_in" value="true" />
             <label htmlFor="" className="text-header-text text-sm md:text-base">
               I would like to opt in to the #AI4Elections Community of Practice
               and national registry.
@@ -159,7 +159,7 @@ function StepFive(_: StepFiveProps) {
         {/* checkbox */}
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-3">
-            <input type="checkbox" name="" id="" />
+            <input type="checkbox" name="applicant_declaration_agreed" value="true" />
             <label htmlFor="" className="text-header-text text-sm md:text-base">
               I agree to the Applicant Declaration.
             </label>
@@ -179,10 +179,11 @@ function StepFive(_: StepFiveProps) {
                 Previous
               </button> */}
         <button
-          // onClick={() => handleNext(5)}
+          type="submit"
+          disabled={isSubmitting}
           className="flex items-center gap-2 h-14 flex-1 bg-accent-orange text-white font-bold text-sm md:text-lg rounded-md px-6 py-3 justify-center"
         >
-          Submit Application
+          {isSubmitting ? "Submitting..." : "Submit Application"}
           <IoArrowForwardSharp className="w-5 md:w-6 h-5 md:h-6" />
         </button>
       </div>

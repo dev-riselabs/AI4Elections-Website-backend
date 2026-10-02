@@ -19,7 +19,7 @@ function StepTwo({ handleNext }: StepTwoProps) {
               >
                 Skills (Use (,) after each skill) *
               </label>
-              <textarea className="rounded-xl text-sm md:text-base bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none"></textarea>
+              <textarea name="skills" className="rounded-xl text-sm md:text-base bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none"></textarea>
             </div>
             <div className="flex flex-col gap-2 ">
               <label
@@ -28,7 +28,7 @@ function StepTwo({ handleNext }: StepTwoProps) {
               >
                 Tell us about your relevant experience *
               </label>
-              <textarea className="rounded-xl text-sm md:text-base bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
+              <textarea name="relevant_experience" className="rounded-xl text-sm md:text-base bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
             </div>
             </div>
         </div>
@@ -47,9 +47,7 @@ function StepTwo({ handleNext }: StepTwoProps) {
               >
                Which challenge track interests you most? *
               </label>
-              <select className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
-                <option value="">Select track</option>
-              </select>
+              <input name="challenge_track" type="text" placeholder="Enter your preferred challenge track" className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 outline-none" />
             </div>
             <div className="flex flex-col gap-2 ">
               <label
@@ -58,7 +56,7 @@ function StepTwo({ handleNext }: StepTwoProps) {
               >
                 Why are you interested in this challenge area? *
               </label>
-              <textarea className="rounded-xl text-sm md:text-base bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
+              <textarea name="challenge_interest_reason" className="rounded-xl text-sm md:text-base bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
             </div>
           </div>
         </div>
@@ -68,12 +66,12 @@ function StepTwo({ handleNext }: StepTwoProps) {
       </div>
 
       <div className="flex gap-4 md:gap-6 items-center">
-        <button onClick={()=> handleNext(1)} className="flex items-center gap-2 border-3 h-14 flex-1 border-special-green-icon text-special-green-icon font-bold text-sm md:text-lg rounded-md px-6 py-3 justify-center min-w-0">
+        <button type="button" onClick={()=> handleNext(1)} className="flex items-center gap-2 border-3 h-14 flex-1 border-special-green-icon text-special-green-icon font-bold text-sm md:text-lg rounded-md px-6 py-3 justify-center min-w-0">
         
         <IoArrowBackOutline className="w-5 md:w-6 h-5 md:h-6" />
         Previous
       </button>
-        <button onClick={()=> handleNext(3)} className="flex items-center gap-2 h-14 flex-1 bg-accent-orange text-white font-bold text-sm md:text-lg rounded-md px-6 py-3 justify-center min-w-0">
+        <button type="button" onClick={()=> handleNext(3)} className="flex items-center gap-2 h-14 flex-1 bg-accent-orange text-white font-bold text-sm md:text-lg rounded-md px-6 py-3 justify-center min-w-0">
               Next
               <IoArrowForwardSharp className="w-5 md:w-6 h-5 md:h-6" />
             </button></div>

@@ -1,9 +1,35 @@
+import { useState, type FormEvent } from "react";
 import { HiOutlineMail } from "react-icons/hi";
 import { IoArrowForwardSharp } from "react-icons/io5";
 import { LuPhone, LuUser } from "react-icons/lu";
+import { ApiRequestError, postForm } from "../../lib/api";
+import CommunitySubmittedModal from "./CommunitySubmittedModal";
 import LocationFields from "../LocationFields";
 
 function FormContainer() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<ApiRequestError | null>(null);
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      await postForm("/community-memberships", new FormData(event.currentTarget));
+      setSubmitted(true);
+    } catch (error) {
+      setSubmitError(
+        error instanceof ApiRequestError
+          ? error
+          : new ApiRequestError("Your submission could not be completed."),
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+
   return (
     <div
       className="px-4 md:px-10 lg:px-25 bg-cover bg-no-repeat bg-center flex flex-col gap-10.5 py-15"
@@ -11,7 +37,15 @@ function FormContainer() {
         backgroundImage: "url('/application_page_form_bg.png')",
       }}
     >
-      {/* <CommunitySubmittedModal/> */}
+      <form onSubmit={handleSubmit} noValidate>
+        {submitError && (
+          <div role="alert" className="mb-5 rounded-md border border-red-700 bg-white p-4 text-red-800">
+            <p>{submitError.message}</p>
+            {Object.entries(submitError.errors).map(([field, messages]) => (
+              <p key={field}>{field.replaceAll("_", " ")}: {messages.join(" ")}</p>
+            ))}
+          </div>
+        )}
       <div className="flex flex-col rounded-3xl border border-form-border border-t-0 overflow-hidden relative p-4 md:p-8 gap-12">
         <div className="w-full h-1.5 bg-linear-to-r from-[#2563EB] to-[#7C3AED] top-0 left-0 absolute"></div>
         <div className="flex flex-col gap-4">
@@ -30,6 +64,7 @@ function FormContainer() {
                   <LuUser className="w-5 md:w-6 h-5 md:h-6" />
                   <input
                     type="text"
+                    name="first_name"
                     placeholder="John"
                     className="text-sm md:text-base text-input-text outline-none"
                   />
@@ -46,6 +81,7 @@ function FormContainer() {
                   <LuUser className="w-5 md:w-6 h-5 md:h-6" />
                   <input
                     type="text"
+                    name="last_name"
                     placeholder="Doe"
                     className="text-sm md:text-base text-input-text outline-none"
                   />
@@ -62,6 +98,7 @@ function FormContainer() {
                   <HiOutlineMail className="w-5 md:w-6 h-5 md:h-6" />
                   <input
                     type="email"
+                    name="email"
                     placeholder="johndoe@example.com"
                     className="text-sm md:text-base text-input-text outline-none"
                   />
@@ -78,6 +115,7 @@ function FormContainer() {
                   <LuPhone className="w-5 md:w-6 h-5 md:h-6" />
                   <input
                     type="text"
+                    name="phone"
                     placeholder="(555) 123-5672"
                     className="text-sm md:text-base text-input-text outline-none"
                   />
@@ -91,8 +129,8 @@ function FormContainer() {
                 >
                   What best describe your application? *
                 </label>
-                <select className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
-                  <option value="">Select</option>
+                <select name="application_type" className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
+                  <option value="">Select</option><option value="Individual">Individual</option><option value="Team">Team</option><option value="Organization">Organization</option>
                 </select>
               </div>
               <div className="flex flex-col gap-2">
@@ -106,6 +144,7 @@ function FormContainer() {
                   {/* <TbBriefcase2 className="w-5 md:w-6 h-5 md:h-6" /> */}
                   <input
                     type="text"
+                    name="organization"
                     placeholder="Enter organisation or institution"
                     className="text-sm md:text-base text-input-text outline-none flex-1"
                   />
@@ -118,9 +157,7 @@ function FormContainer() {
                 >
                   What areas are you interested in? *
                 </label>
-                <select className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
-                  <option value="">Select</option>
-                </select>
+                <input name="areas_of_interest" type="text" placeholder="Enter your areas of interest" className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 outline-none" />
               </div>
                <div className="flex flex-col gap-2">
                 <label
@@ -129,9 +166,7 @@ function FormContainer() {
                 >
                   How would you like to participate? *
                 </label>
-                <select className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
-                  <option value="">Select City</option>
-                </select>
+                <input name="participation_preference" type="text" placeholder="How would you like to participate?" className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 outline-none" />
               </div>
               <div className="flex flex-col gap-2">
                 <label
@@ -140,9 +175,7 @@ function FormContainer() {
                 >
                   Education Qualification *
                 </label>
-                <select className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
-                  <option value="">Select</option>
-                </select>
+                <input name="education_qualification" type="text" placeholder="Enter your qualification" className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 outline-none" />
               </div>
               <div className="flex flex-col gap-2 md:col-span-2">
               <label
@@ -151,7 +184,7 @@ function FormContainer() {
               >
                 Tell us a little about yourself *
               </label>
-              <textarea placeholder="Briefly tell us about your interests, experience or what you hope to contribute." className="rounded-xl bg-form-input flex text-sm md:text-base items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
+              <textarea name="about_yourself" placeholder="Briefly tell us about your interests, experience or what you hope to contribute." className="rounded-xl bg-form-input flex text-sm md:text-base items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
             </div>
             </div>
           </div>
@@ -165,7 +198,7 @@ function FormContainer() {
           <h3 className="text-xl md:text-2xl text-price-banner">Community Consent *</h3>
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3">
-              <input type="checkbox" name="" id="" />
+              <input type="checkbox" name="community_consent" value="true" />
               <label htmlFor="" className="text-header-text text-xs md:text-base">
                 I agree to join the #AI4Elections Community of Practice and allow my information to be used to facilitate relevant community activities, collaboration, mentorship and research opportunities.
               </label>
@@ -182,7 +215,7 @@ function FormContainer() {
           <h3 className="text-xl md:text-2xl text-price-banner">Email Updates</h3>
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3">
-              <input type="checkbox" name="" id="" />
+              <input type="checkbox" name="email_updates" value="true" />
               <label htmlFor="" className="text-header-text text-xs md:text-base">
                I would like to receive relevant #AI4Elections community updates and opportunities by email.
               </label>
@@ -194,11 +227,13 @@ function FormContainer() {
           {/* divider */}
           <div className="max-w-147.25 bg-divider w-full h-0.5"></div>
         </div>
-        <button className="flex items-center gap-2 bg-accent-orange text-white font-bold text-sm md:text-lg rounded-md px-2 md:px-6 py-3 justify-center">
-          Join the Community of Practice
+        <button type="submit" disabled={isSubmitting} className="flex items-center gap-2 bg-accent-orange text-white font-bold text-sm md:text-lg rounded-md px-2 md:px-6 py-3 justify-center disabled:opacity-60">
+          {isSubmitting ? "Submitting..." : "Join the Community of Practice"}
           <IoArrowForwardSharp className="w-5 md:w-6 h-5 md:h-6" />
         </button>
       </div>
+      </form>
+      {submitted && <CommunitySubmittedModal />}
     </div>
   );
 }
