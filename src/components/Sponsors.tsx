@@ -147,17 +147,17 @@ export default function Sponsors() {
           {marqueeList.map((partner, index) => (
             <div
               key={`${partner.id}-${index}`}
-              className="group relative flex flex-col items-center justify-center h-20 sm:h-24 px-8 py-3.5 rounded-2xl bg-white hover:bg-white border border-gray-200/70 hover:border-accent-text hover:shadow-lg transition-all duration-300 min-w-[200px] sm:min-w-[230px] cursor-pointer"
+              className="group relative flex flex-col items-center justify-center h-20 sm:h-34 px-8 py-3.5 rounded-2xl bg-white hover:bg-white border border-gray-200/70 hover:border-accent-text hover:shadow-lg transition-all duration-300 min-w-[200px] sm:min-w-[230px] cursor-pointer"
             >
               <img
                 src={partner.src}
                 alt={partner.alt}
-                className="max-h-11 sm:max-h-13 w-auto max-w-[155px] object-contain transition-transform duration-300 group-hover:scale-105"
+                className="max-h-19 sm:max-h-25 w-auto max-w-38.75 object-cover transition-transform duration-300 group-hover:scale-105"
                 loading="lazy"
               />
 
               {/* Tooltip badge on hover */}
-              <div className="pointer-events-none absolute -bottom-2 left-1/2 -translate-x-1/2 translate-y-full opacity-0 group-hover:opacity-100 transition-all duration-200 bg-gray-900 text-white text-[11px] font-medium py-1 px-3 rounded-lg whitespace-nowrap shadow-xl z-20">
+              <div className="pointer-events-none absolute -top-10 flex flex-col items-center gap-1 left-1/2 -translate-x-1/2 translate-y-full opacity-0 group-hover:opacity-100 transition-all duration-200 bg-gray-900 text-white text-[8px]  font-medium py-1 px-3 rounded-lg whitespace-nowrap shadow-xl z-40">
                 <span>{partner.name}</span>
                 <span className="text-orange-400 ml-1.5">• {partner.role}</span>
               </div>

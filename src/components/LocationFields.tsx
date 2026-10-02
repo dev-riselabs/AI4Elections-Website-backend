@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const locationApi = "https://countriesnow.space/api/v0.1/countries";
 
 const selectClassName =
-  "rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all disabled:cursor-not-allowed disabled:opacity-60";
+  "rounded-xl bg-form-input shadow text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all disabled:cursor-not-allowed disabled:opacity-60";
 
 type ApiResponse<T> = {
   error: boolean;

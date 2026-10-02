@@ -2,7 +2,7 @@ import React from "react";
 
 const About: React.FC = () => {
   return (
-    <section className="w-full h-full md:h-335 xl:h-500 py-10 md:p-10 bg-[url('../technical_brief_bg.png')] bg-no-repeat bg-cover bg-right md:bg-center">
+    <section className="w-full h-full py-10 md:p-10 bg-[url('../technical_brief_bg.png')] bg-no-repeat bg-cover bg-right md:bg-center">
       <div className="max-w-6xl mx-auto px-4">
         {/* Top Image: Edge-to-edge within container rectangular image of a team meeting */}
         <div className="w-full overflow-hidden rounded-xl shadow-md mb-8">
@@ -14,9 +14,9 @@ const About: React.FC = () => {
         </div>
 
         {/* Bottom 12-Column Layout */}
-        <div className="grid md:grid-cols-12 gap-8 items-stretch">
+        {/* <div className="grid md:grid-cols-12 gap-8 items-stretch"> */}
           {/* Left Side (col-span-2) */}
-          <div className="md:col-span-12 space-y-6 text-gray-700 leading-loose font-robotoMono text-justify text-sm md:text-sm xl:text-xl">
+          {/* <div className="md:col-span-12 space-y-6 text-gray-700 leading-loose font-robotoMono text-justify text-sm md:text-sm xl:text-xl">
             <p className="">
               Elections are increasingly shaped by digital technologies,
               artificial intelligence and the way information is created, shared
@@ -28,8 +28,8 @@ const About: React.FC = () => {
               explore how responsible AI and digital innovation can contribute
               to more transparent, inclusive and accountable elections.
             </p>
-          </div>
-          <div className="md:col-span-7 space-y-6 text-gray-700 leading-loose font-robotoMono text-justify text-sm md:text-sm xl:text-xl">
+          </div> */}
+          {/* <div className="md:col-span-7 space-y-6 text-gray-700 leading-loose font-robotoMono text-justify text-sm md:text-sm xl:text-xl">
             <p>
               Led by{" "}
               <strong className="text-orange-500 font-bold">
@@ -43,16 +43,17 @@ const About: React.FC = () => {
               professionals and other innovators to develop, test and explore
               responsible approaches to electoral technology.
             </p>
-            {/* Right Side (col-span-1) - Tall, prominent card */}
-          </div>
-            <div className="md:col-span-5 flex">
-              <div className="w-full bg-white rounded-2xl border border-gray-200 shadow-2xl p-8 flex items-center justify-center min-h-[300px] text-center transform hover:-translate-y-1 transition-transform duration-300">
+            Right Side (col-span-1) - Tall, prominent card
+          </div> */}
+            {/* <div className="md:col-span-5 flex">
+              <div className="w-full  rounded-2xl border border-gray-200 shadow-2xl flex items-center justify-center min-h-[300px] text-center transform hover:-translate-y-1 transition-transform duration-300">
                 <h3 className="text-orange-500 font-bold text-xl md:text-2xl uppercase tracking-wider leading-snug">
                   AI4ELECTIONS HACKATHON Fly DESIGN
                 </h3>
+                <img src="/#AI4ELECTIONS HACKATHON DESIGN.png" alt="" className="w-full h-full"/>
               </div>
-            </div>
-          <div className="md:col-span-12 space-y-6 text-gray-700 leading-loose font-robotoMono text-justify text-sm md:text-sm xl:text-xl">
+            </div> */}
+          {/* <div className="md:col-span-12 space-y-6 text-gray-700 leading-loose font-robotoMono text-justify text-sm md:text-sm xl:text-xl">
             <p>
               The initiative is built around three connected components: the
               #AI4Elections Hackathon, the #AI4Elections Innovation Lab, and the
@@ -64,7 +65,19 @@ const About: React.FC = () => {
               network for research, collaboration, learning and knowledge
               exchange.
             </p>
+          </div> */}
+        {/* </div> */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <p className="md:col-span-2 text-sm md:text-xl text-pillar-text leading-9">Elections are increasingly shaped by digital technologies, artificial intelligence and the way information is created, shared and accessed. At the same time, new technologies present opportunities to strengthen electoral information, improve access to civic participation, support election observation and develop more resilient systems. #AI4Elections brings together Nigeria's technology, research, academic, civic and electoral communities to explore how responsible AI and digital innovation can contribute to more transparent, inclusive and accountable elections.</p>
+          <div className="flex flex-col gap-4">
+            <p className=" text-sm md:text-xl text-pillar-text leading-9">Led by <span className="text-accent-text font-bold">Rise Networks</span>, #AI4Elections is a national, multidisciplinary and nonpartisan initiative focused on developing practical technology solutions to real electoral challenges. The initiative brings together developers, AI and data professionals, researchers, students, designers, electoral experts, civic organisations, policy professionals and other innovators to develop, test and explore responsible approaches to electoral technology.</p>
+            <p className=" text-sm md:text-xl text-pillar-text leading-9">The initiative is built around three connected components: the #AI4Elections Hackathon, the #AI4Elections Innovation Lab, and the #AI4Elections Community of Practice. The Hackathon provides a platform for teams to develop innovative solutions across key electoral challenge areas. Selected projects may progress into the Innovation Lab for further technical development, validation and mentorship, while the Community of Practice provides an ongoing network for research, collaboration, learning and knowledge exchange.</p>
+
           </div>
+          <img src="./technical_brief_img (2).png" alt="" className="w-full h-full" />
+          
+          <p className="md:col-span-2 text-sm md:text-xl text-pillar-text leading-9">Running from October 2026 to February 2027, #AI4Elections will officially kick off on <span className="font-bold">Thursday 8th October 2026</span>, bringing together innovators, researchers, developers, students, electoral experts and civic practitioners to explore responsible applications of AI and technology for electoral innovation.</p>
+          <p className="md:col-span-2 text-sm md:text-xl text-pillar-text leading-9">Applications for the Hackathon will remain open until <span className="font-bold">Thursday 29th October 2026 at 11:59pm WAT</span>, after which selected participants will progress through team formation, technical orientation, mentorship, development and testing.</p>
         </div>
       </div>
     </section>

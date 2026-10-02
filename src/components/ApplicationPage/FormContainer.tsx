@@ -7,6 +7,8 @@ import StepThree from "./StepThree";
 import StepFour from "./StepFour";
 import StepFive from "./StepFive";
 
+
+
 function FormContainer() {
   const [step, setStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -46,6 +48,7 @@ function FormContainer() {
     setSubmitError(null);
 
     try {
+      // console.log(event.currentTarget)
       await postForm("/applications", new FormData(event.currentTarget));
       setSubmitted(true);
     } catch (error) {

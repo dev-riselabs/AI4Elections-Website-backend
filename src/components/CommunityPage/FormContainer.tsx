@@ -64,14 +64,14 @@ function FormContainer() {
                 >
                   First Name *
                 </label>
-                <div className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
+                <div className="rounded-xl bg-form-input shadow flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
                   <LuUser className="w-5 md:w-6 h-5 md:h-6" />
                   <input
                     type="text"
                     name="first_name"
                     required
                     placeholder="John"
-                    className="text-sm md:text-base text-input-text outline-none"
+                    className="text-sm md:text-base text-input-text outline-none flex-1"
                   />
                 </div>
               </div>
@@ -82,14 +82,14 @@ function FormContainer() {
                 >
                   Last Name *
                 </label>
-                <div className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
+                <div className="rounded-xl bg-form-input shadow flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
                   <LuUser className="w-5 md:w-6 h-5 md:h-6" />
                   <input
                     type="text"
                     name="last_name"
                     required
                     placeholder="Doe"
-                    className="text-sm md:text-base text-input-text outline-none"
+                    className="text-sm md:text-base text-input-text outline-none flex-1"
                   />
                 </div>
               </div>
@@ -100,14 +100,14 @@ function FormContainer() {
                 >
                   Email Address *
                 </label>
-                <div className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
+                <div className="rounded-xl bg-form-input shadow flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
                   <HiOutlineMail className="w-5 md:w-6 h-5 md:h-6" />
                   <input
                     type="email"
                     name="email"
                     required
                     placeholder="johndoe@example.com"
-                    className="text-sm md:text-base text-input-text outline-none"
+                    className="text-sm md:text-base text-input-text outline-none flex-1"
                   />
                 </div>
               </div>
@@ -118,14 +118,14 @@ function FormContainer() {
                 >
                   Phone Number *
                 </label>
-                <div className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
+                <div className="rounded-xl bg-form-input shadow flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
                   <LuPhone className="w-5 md:w-6 h-5 md:h-6" />
                   <input
                     type="text"
                     name="phone"
                     required
                     placeholder="(555) 123-5672"
-                    className="text-sm md:text-base text-input-text outline-none"
+                    className="text-sm md:text-base text-input-text outline-none flex-1"
                   />
                 </div>
               </div>
@@ -137,7 +137,7 @@ function FormContainer() {
                 >
                   What best describe your application? *
                 </label>
-                <select name="application_type" required className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
+                <select name="application_type" className="rounded-xl bg-form-input shadow text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
                   <option value="">Select</option><option value="Individual">Individual</option><option value="Team">Team</option><option value="Organization">Organization</option>
                 </select>
               </div>
@@ -148,7 +148,7 @@ function FormContainer() {
                 >
                   Organisation / Institution *
                 </label>
-                <div className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
+                <div className="rounded-xl bg-form-input shadow flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
                   {/* <TbBriefcase2 className="w-5 md:w-6 h-5 md:h-6" /> */}
                   <input
                     type="text"
@@ -166,7 +166,7 @@ function FormContainer() {
                 >
                   What areas are you interested in? *
                 </label>
-                <input name="areas_of_interest" type="text" required placeholder="Enter your areas of interest" className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 outline-none" />
+                <input name="areas_of_interest" type="text" placeholder="Enter your areas of interest" className="rounded-xl bg-form-input shadow text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 outline-none" />
               </div>
                <div className="flex flex-col gap-2">
                 <label
@@ -175,7 +175,7 @@ function FormContainer() {
                 >
                   How would you like to participate? *
                 </label>
-                <input name="participation_preference" type="text" required placeholder="How would you like to participate?" className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 outline-none" />
+                <input name="participation_preference" type="text" placeholder="How would you like to participate?" className="rounded-xl bg-form-input shadow text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 outline-none" />
               </div>
               <div className="flex flex-col gap-2">
                 <label
@@ -184,7 +184,7 @@ function FormContainer() {
                 >
                   Education Qualification *
                 </label>
-                <input name="education_qualification" type="text" required placeholder="Enter your qualification" className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 outline-none" />
+                <input name="education_qualification" type="text" placeholder="Enter your qualification" className="rounded-xl bg-form-input shadow text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 outline-none" />
               </div>
               <div className="flex flex-col gap-2 md:col-span-2">
               <label
@@ -193,7 +193,7 @@ function FormContainer() {
               >
                 Tell us a little about yourself *
               </label>
-              <textarea name="about_yourself" required placeholder="Briefly tell us about your interests, experience or what you hope to contribute." className="rounded-xl bg-form-input flex text-sm md:text-base items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
+              <textarea name="about_yourself" placeholder="Briefly tell us about your interests, experience or what you hope to contribute." className="rounded-xl bg-form-input shadow flex text-sm md:text-base items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
             </div>
             </div>
           </div>

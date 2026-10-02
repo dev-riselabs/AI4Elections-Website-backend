@@ -4,22 +4,22 @@ function ApplicationSubmittedModal() {
   return (
     <div className="fixed w-full h-screen bg-black/70 flex items-center justify-center px-4 z-30 inset-0">
       <div
-        className="flex flex-col items-center gap-12 md:gap-21 rounded-3xl md:rounded-[100px] bg-center bg-no-repeat bg-cover px-4 md:px-12.5 py-10 md:py-25 max-w-217.75 max-h-[90vh] overflow-y-auto mx-auto"
+        className="flex flex-col items-center gap-7 md:gap-8 rounded-3xl md:rounded-[70px] bg-center bg-no-repeat bg-cover px-4 md:px-8 py-10  max-w-180 max-h-[90vh] overflow-y-auto mx-auto"
         style={{ backgroundImage: "url('/why_ai4election_bg.png')" }}
       >
         <div className="flex flex-col items-center gap-12.5">
           <div className="flex items-center gap-6">
-            <h2 className="text-xl md:text-2xl font-semibold text-white">
+            <h2 className="text-lg md:text-xl  font-semibold text-white">
               Application Submitted
             </h2>
-            <div className="w-8 md:w-11.5 h-8 md:h-11.5 rounded-full bg-accent-green shrink-0"></div>
+            <div className="w-8 md:w-10 h-8 md:h-10 rounded-full bg-accent-green shrink-0"></div>
           </div>
-          <p className="text-center text-base md:text-2xl text-white">
+          <p className="text-center text-sm md:text-base text-white">
             Thank you for applying to Rise Networks #AI4Elections Hackathon
             2026.
           </p>
         </div>
-        <div className="flex flex-col gap-4 items-center text-sm md:text-xl text-white">
+        <div className="flex flex-col gap-4 items-center text-xs md:text-sm text-white">
           <p className="text-center">
             Congratulations, your application has been successfully received.
           </p>

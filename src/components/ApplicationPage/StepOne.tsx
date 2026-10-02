@@ -26,14 +26,14 @@ function StepOne({ handleNext, applicationType, onApplicationTypeChange }: StepO
               >
                 First Name *
               </label>
-              <div className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
+              <div className="rounded-xl bg-form-input shadow flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
                 <LuUser className="w-5 md:w-6 h-5 md:h-6" />
                 <input
                   type="text"
                   name="first_name"
                   required
                   placeholder="John"
-                  className="text-sm md:text-base text-input-text outline-none"
+                  className="text-sm md:text-base text-input-text outline-none flex-1"
                 />
               </div>
             </div>
@@ -44,14 +44,14 @@ function StepOne({ handleNext, applicationType, onApplicationTypeChange }: StepO
               >
                 Last Name *
               </label>
-              <div className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
+              <div className="rounded-xl bg-form-input shadow flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
                 <LuUser className="w-5 md:w-6 h-5 md:h-6" />
                 <input
                   type="text"
                   name="last_name"
                   required
                   placeholder="Doe"
-                  className="text-sm md:text-base text-input-text outline-none"
+                  className="text-sm md:text-base text-input-text outline-none flex-1"
                 />
               </div>
             </div>
@@ -62,14 +62,14 @@ function StepOne({ handleNext, applicationType, onApplicationTypeChange }: StepO
               >
                 Email Address *
               </label>
-              <div className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
+              <div className="rounded-xl bg-form-input shadow flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
                 <HiOutlineMail className="w-5 md:w-6 h-5 md:h-6" />
                 <input
                   type="email"
                   name="email"
                   required
                   placeholder="johndoe@example.com"
-                  className="text-sm md:text-base text-input-text outline-none"
+                  className="text-sm md:text-base text-input-text outline-none flex-1"
                 />
               </div>
             </div>
@@ -80,14 +80,14 @@ function StepOne({ handleNext, applicationType, onApplicationTypeChange }: StepO
               >
                 Phone Number *
               </label>
-              <div className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
+              <div className="rounded-xl bg-form-input shadow flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
                 <LuPhone className="w-5 md:w-6 h-5 md:h-6" />
                 <input
                   type="text"
                   name="phone"
                   required
                   placeholder="(555) 123-5672"
-                  className="text-sm md:text-base text-input-text outline-none"
+                  className="text-sm md:text-base text-input-text outline-none flex-1"
                 />
               </div>
             </div>
@@ -99,7 +99,7 @@ function StepOne({ handleNext, applicationType, onApplicationTypeChange }: StepO
               >
                 What best describe your application? *
               </label>
-              <select name="application_type" value={applicationType} onChange={(event) => onApplicationTypeChange(event.currentTarget.value)} required className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
+              <select name="application_type" className="rounded-xl bg-form-input shadow text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
                 <option value="">Select</option><option value="Individual">Individual</option><option value="Team">Team</option><option value="Organization">Organization</option>
               </select>
             </div>
@@ -119,7 +119,7 @@ function StepOne({ handleNext, applicationType, onApplicationTypeChange }: StepO
               >
                 Tell us about your experience *
               </label>
-              <textarea name="experience_summary" required className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none"></textarea>
+              <textarea name="experience_summary" className="rounded-xl bg-form-input shadow text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none"></textarea>
             </div>
             <div className="flex flex-col gap-2">
               <label
@@ -128,7 +128,7 @@ function StepOne({ handleNext, applicationType, onApplicationTypeChange }: StepO
               >
                Primary Area of Expertise *
               </label>
-              <input name="primary_expertise" type="text" required placeholder="Enter your primary expertise" className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 outline-none" />
+              <input name="primary_expertise" type="text" placeholder="Enter your primary expertise" className="rounded-xl bg-form-input shadow text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 outline-none" />
             </div>
             <div className="flex flex-col gap-2">
               <label
@@ -137,7 +137,7 @@ function StepOne({ handleNext, applicationType, onApplicationTypeChange }: StepO
               >
                 Years of Experience *
               </label>
-              <div className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
+              <div className="rounded-xl bg-form-input shadow flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
                 <TbBriefcase2 className="w-5 md:w-6 h-5 md:h-6" />
                 <input
                   type="number"
@@ -148,7 +148,7 @@ function StepOne({ handleNext, applicationType, onApplicationTypeChange }: StepO
                   step="1"
                   required
                   placeholder="4"
-                  className="text-sm md:text-base text-input-text outline-none"
+                  className="text-sm md:text-base text-input-text outline-none flex-1"
                 />
               </div>
             </div>
@@ -159,7 +159,7 @@ function StepOne({ handleNext, applicationType, onApplicationTypeChange }: StepO
               >
                 Current Role / Occupation *
               </label>
-              <div className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
+              <div className="rounded-xl bg-form-input shadow flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
                 {/* <TbBriefcase2 className="w-5 md:w-6 h-5 md:h-6" /> */}
                 <input
                   type="text"
@@ -177,7 +177,7 @@ function StepOne({ handleNext, applicationType, onApplicationTypeChange }: StepO
               >
                 Organisation / Institution *
               </label>
-              <div className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
+              <div className="rounded-xl bg-form-input shadow flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
                 {/* <TbBriefcase2 className="w-5 md:w-6 h-5 md:h-6" /> */}
                 <input
                   type="text"
@@ -195,7 +195,7 @@ function StepOne({ handleNext, applicationType, onApplicationTypeChange }: StepO
               >
                Highest level of Education *
               </label>
-              <input name="education_level" type="text" required placeholder="Enter your highest education level" className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 outline-none" />
+              <input name="education_level" type="text" placeholder="Enter your highest education level" className="rounded-xl bg-form-input shadow text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 outline-none" />
             </div>
             <div className="flex flex-col gap-2">
               <label
@@ -204,7 +204,7 @@ function StepOne({ handleNext, applicationType, onApplicationTypeChange }: StepO
               >
                 Academic / Professional Field *
               </label>
-              <div className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
+              <div className="rounded-xl bg-form-input shadow flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
                 {/* <TbBriefcase2 className="w-5 md:w-6 h-5 md:h-6" /> */}
                 <input
                   type="text"
