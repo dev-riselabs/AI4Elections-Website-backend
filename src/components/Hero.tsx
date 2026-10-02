@@ -1,5 +1,6 @@
 import { FaArrowRight } from "react-icons/fa";
 import CountdownTimer from "./CountDown";
+import { Link } from "react-router";
 export default function Hero() {
   return (
     <section className="w-full h-full md:h-145 lg:h-176 xl:h-260 bg-[url('/hero-bg.png')]  bg-no-repeat bg-cover bg-right md:bg-center font-robotoMono p-2 md:p-6">
@@ -27,7 +28,7 @@ export default function Hero() {
             {/* Right: An orange button */}
             <div>
               <button className="flex gap-4 md:gap-2 lg:gap-8 text-center items-center bg-accent-text hover:bg-orange-600 transition-colors duration-200 text-white text-[3vw] md:text-[1.3vw] xl:text-[1vw] font-semibold  px-4 md:px-[3vw] py-3 lg:py-4 rounded-lg shadow-sm hover:shadow cursor-pointer">
-                Partner / Sponsor With Us <FaArrowRight />
+                Partner With Us <FaArrowRight />
               </button>
             </div>
           </div>
@@ -60,15 +61,17 @@ export default function Hero() {
               </p>
 
               <div className="flex flex-wrap items-center gap-4 md:mb-4 xl:mb-8 pt-2 px-2 md:px-6 lg:pl-10">
-                <button className="flex gap-8 md:gap-4  text-center items-center bg-accent-text hover:bg-orange-500 transition-all duration-200 md:text-[1.4vw] text-white px-16 md:px-4 lg:px-12 py-3 rounded-lg font-semibold shadow-lg hover:shadow-orange-500/30 hover:-translate-y-0.5 cursor-pointer">
+                <Link
+                  to="/application"
+                  className="flex gap-8 md:gap-4  text-center items-center bg-accent-text hover:bg-orange-500 transition-all duration-200 md:text-[1.4vw] text-white px-16 md:px-4 lg:px-12 py-3 rounded-lg font-semibold shadow-lg hover:shadow-orange-500/30 hover:-translate-y-0.5 cursor-pointer"
+                >
                   APPLY NOW ! <FaArrowRight />
-                </button>
+                </Link>
                 <button className="flex gap-8 md:gap-2 text-center items-center bg-transparent hover:bg-white/10 transition-all duration-200 border border-special-green-icon  text-white text-[0.8rem] md:text-[1vw] lg:text-md px-6 py-3 rounded-lg font-semibold hover:-translate-y-0.5 cursor-pointer">
                   Join AI4Elections Dev Hub <FaArrowRight />
                 </button>
               </div>
               <CountdownTimer />
-              
             </div>
 
             {/* Right Column */}

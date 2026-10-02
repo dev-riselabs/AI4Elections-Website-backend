@@ -1,10 +1,14 @@
 import { IoArrowBackOutline, IoArrowForwardSharp } from "react-icons/io5";
+import { useState } from "react";
 
 type StepThreeProps = {
   handleNext: (value: number) => void;
 };
 
 function StepThree({ handleNext }: StepThreeProps) {
+  const [hasSolutionIdea, setHasSolutionIdea] = useState("");
+  const [hasPrototype, setHasPrototype] = useState("");
+
   return (
     <div className="flex flex-col rounded-3xl border border-form-border border-t-0 overflow-hidden relative p-4 md:p-8 gap-12">
       <div className="w-full h-1.5 bg-linear-to-r from-[#2563EB] to-[#7C3AED] top-0 left-0 absolute"></div>
@@ -22,19 +26,20 @@ function StepThree({ handleNext }: StepThreeProps) {
               </label>
               <div className="flex items-center gap-y-4 gap-x-12 flex-wrap">
                 <div className="flex items-center gap-3">
-                  <input type="radio" name="has_solution_idea" value="true" />
+                  <input type="radio" name="has_solution_idea" value="true" checked={hasSolutionIdea === "true"} onChange={(event) => setHasSolutionIdea(event.currentTarget.value)} required />
                   <label htmlFor="" className="text-header-text text-sm md:text-base">
                     Yes, I have an idea
                   </label>
                 </div>
                 <div className="flex items-center gap-3">
-                  <input type="radio" name="has_solution_idea" value="false" />
+                  <input type="radio" name="has_solution_idea" value="false" checked={hasSolutionIdea === "false"} onChange={(event) => setHasSolutionIdea(event.currentTarget.value)} required />
                   <label htmlFor="" className="text-header-text text-sm md:text-base">
                     No, I would like to develop an idea during the programme
                   </label>
                 </div>
               </div>
             </div>
+            {hasSolutionIdea === "true" && <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-2 ">
               <label
                 htmlFor=""
@@ -42,7 +47,7 @@ function StepThree({ handleNext }: StepThreeProps) {
               >
                 If Yes, what problem are you trying to solve? *
               </label>
-              <textarea name="problem_to_solve" className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
+              <textarea name="problem_to_solve" required className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
             </div>
             <div className="flex flex-col gap-2 ">
               <label
@@ -51,7 +56,7 @@ function StepThree({ handleNext }: StepThreeProps) {
               >
                 Who is affected by this problem? *
               </label>
-              <textarea name="affected_people" className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
+              <textarea name="affected_people" required className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
             </div>
             <div className="flex flex-col gap-2 ">
               <label
@@ -60,7 +65,7 @@ function StepThree({ handleNext }: StepThreeProps) {
               >
                 Describe your proposed solution *
               </label>
-              <textarea name="proposed_solution" className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
+              <textarea name="proposed_solution" required className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
             </div>
             <div className="flex flex-col gap-2 ">
               <label
@@ -69,7 +74,7 @@ function StepThree({ handleNext }: StepThreeProps) {
               >
                 How would AI or technology contribute to the solution? *
               </label>
-              <textarea name="technology_contribution" className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
+              <textarea name="technology_contribution" required className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
             </div>
             <div className="flex flex-col gap-2 ">
               <label
@@ -78,7 +83,7 @@ function StepThree({ handleNext }: StepThreeProps) {
               >
                 Who would benefit from the solution? *
               </label>
-              <textarea name="beneficiaries" className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
+              <textarea name="beneficiaries" required className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
             </div>
             <div className="flex flex-col gap-2 ">
               <label
@@ -87,8 +92,9 @@ function StepThree({ handleNext }: StepThreeProps) {
               >
                 What makes your approach different or useful? *
               </label>
-              <textarea name="differentiation" className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
+              <textarea name="differentiation" required className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
             </div>
+            </div>}
 
             <div className="flex flex-col gap-2 ">
               <label
@@ -99,7 +105,7 @@ function StepThree({ handleNext }: StepThreeProps) {
               </label>
               <div className="flex items-center gap-x-12 gap-y-6 flex-wrap">
                 <div className="flex items-center gap-3">
-                  <input type="checkbox" name="idea_stage[]" value="Idea only" />
+                  <input type="checkbox" name="idea_stage[]" value="Idea only" required />
                   <label htmlFor="" className="text-header-text text-sm md:text-base">
                     Idea only
                   </label>
@@ -152,13 +158,13 @@ function StepThree({ handleNext }: StepThreeProps) {
               </label>
               <div className="flex items-center gap-y-4 gap-x-12 flex-wrap">
                 <div className="flex items-center gap-3">
-                  <input type="radio" name="has_prototype" value="true" />
+                  <input type="radio" name="has_prototype" value="true" checked={hasPrototype === "true"} onChange={(event) => setHasPrototype(event.currentTarget.value)} />
                   <label htmlFor="" className="text-header-text text-sm md:text-base">
                     Yes
                   </label>
                 </div>
                 <div className="flex items-center gap-3">
-                  <input type="radio" name="has_prototype" value="false" />
+                  <input type="radio" name="has_prototype" value="false" checked={hasPrototype === "false"} onChange={(event) => setHasPrototype(event.currentTarget.value)} />
                   <label htmlFor="" className="text-header-text text-sm md:text-base">
                     No
                   </label>
@@ -166,7 +172,7 @@ function StepThree({ handleNext }: StepThreeProps) {
               </div>
             </div>
 
-            <div className="flex flex-col gap-2">
+            {hasPrototype === "true" && <div className="flex flex-col gap-2">
               <label
                 htmlFor=""
                 className="text-base md:text-xl text-header-text font-semibold"
@@ -182,7 +188,7 @@ function StepThree({ handleNext }: StepThreeProps) {
                   className="text-sm md:text-base text-input-text outline-none"
                 />
               </div>
-            </div>
+            </div>}
           </div>
         </div>
 

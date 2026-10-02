@@ -5,10 +5,12 @@ import { TbBriefcase2 } from "react-icons/tb";
 import LocationFields from "../LocationFields";
 
 type StepOneProps = {
-    handleNext :  (value: number) => void;
+  handleNext: (value: number) => void;
+  applicationType: string;
+  onApplicationTypeChange: (value: string) => void;
 }
 
-function StepOne({handleNext} : StepOneProps) {
+function StepOne({ handleNext, applicationType, onApplicationTypeChange }: StepOneProps) {
   return (
     <div className="flex flex-col rounded-3xl border border-form-border border-t-0 overflow-hidden relative p-4 md:p-8 gap-12">
       <div className="w-full h-1.5 bg-linear-to-r from-[#2563EB] to-[#7C3AED] top-0 left-0 absolute"></div>
@@ -29,6 +31,7 @@ function StepOne({handleNext} : StepOneProps) {
                 <input
                   type="text"
                   name="first_name"
+                  required
                   placeholder="John"
                   className="text-sm md:text-base text-input-text outline-none"
                 />
@@ -46,6 +49,7 @@ function StepOne({handleNext} : StepOneProps) {
                 <input
                   type="text"
                   name="last_name"
+                  required
                   placeholder="Doe"
                   className="text-sm md:text-base text-input-text outline-none"
                 />
@@ -63,6 +67,7 @@ function StepOne({handleNext} : StepOneProps) {
                 <input
                   type="email"
                   name="email"
+                  required
                   placeholder="johndoe@example.com"
                   className="text-sm md:text-base text-input-text outline-none"
                 />
@@ -80,6 +85,7 @@ function StepOne({handleNext} : StepOneProps) {
                 <input
                   type="text"
                   name="phone"
+                  required
                   placeholder="(555) 123-5672"
                   className="text-sm md:text-base text-input-text outline-none"
                 />
@@ -93,7 +99,7 @@ function StepOne({handleNext} : StepOneProps) {
               >
                 What best describe your application? *
               </label>
-              <select name="application_type" className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
+              <select name="application_type" value={applicationType} onChange={(event) => onApplicationTypeChange(event.currentTarget.value)} required className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
                 <option value="">Select</option><option value="Individual">Individual</option><option value="Team">Team</option><option value="Organization">Organization</option>
               </select>
             </div>
@@ -113,7 +119,7 @@ function StepOne({handleNext} : StepOneProps) {
               >
                 Tell us about your experience *
               </label>
-              <textarea name="experience_summary" className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none"></textarea>
+              <textarea name="experience_summary" required className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none"></textarea>
             </div>
             <div className="flex flex-col gap-2">
               <label
@@ -122,7 +128,7 @@ function StepOne({handleNext} : StepOneProps) {
               >
                Primary Area of Expertise *
               </label>
-              <input name="primary_expertise" type="text" placeholder="Enter your primary expertise" className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 outline-none" />
+              <input name="primary_expertise" type="text" required placeholder="Enter your primary expertise" className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 outline-none" />
             </div>
             <div className="flex flex-col gap-2">
               <label
@@ -134,9 +140,13 @@ function StepOne({handleNext} : StepOneProps) {
               <div className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
                 <TbBriefcase2 className="w-5 md:w-6 h-5 md:h-6" />
                 <input
-                  type="text"
+                  type="number"
                   name="years_experience"
                   inputMode="numeric"
+                  min="0"
+                  max="80"
+                  step="1"
+                  required
                   placeholder="4"
                   className="text-sm md:text-base text-input-text outline-none"
                 />
@@ -154,6 +164,7 @@ function StepOne({handleNext} : StepOneProps) {
                 <input
                   type="text"
                   name="current_role"
+                  required
                   placeholder="Enter your current role"
                   className="text-sm md:text-base text-input-text outline-none flex-1"
                 />
@@ -171,6 +182,7 @@ function StepOne({handleNext} : StepOneProps) {
                 <input
                   type="text"
                   name="organization"
+                  required
                   placeholder="Enter organisation or institution"
                   className="text-sm md:text-base text-input-text outline-none flex-1"
                 />
@@ -183,7 +195,7 @@ function StepOne({handleNext} : StepOneProps) {
               >
                Highest level of Education *
               </label>
-              <input name="education_level" type="text" placeholder="Enter your highest education level" className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 outline-none" />
+              <input name="education_level" type="text" required placeholder="Enter your highest education level" className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 outline-none" />
             </div>
             <div className="flex flex-col gap-2">
               <label
@@ -197,6 +209,7 @@ function StepOne({handleNext} : StepOneProps) {
                 <input
                   type="text"
                   name="academic_field"
+                  required
                   placeholder="Enter your field"
                   className="text-sm md:text-base text-input-text outline-none flex-1"
                 />

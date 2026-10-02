@@ -61,7 +61,7 @@ function StepFive({ isSubmitting }: StepFiveProps) {
           <h3 className="text-xl md:text-2xl text-price-banner">Confirmation *</h3>
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-3">
-              <input type="checkbox" name="responsible_participation_confirmed" value="true" />
+              <input type="checkbox" name="responsible_participation_confirmed" value="true" required />
               <label htmlFor="" className="text-header-text text-sm md:text-base">
                 I have read and understand the responsible participation
                 requirements.
@@ -102,14 +102,14 @@ function StepFive({ isSubmitting }: StepFiveProps) {
         {/* checkbox */}
         <div className="flex flex-col gap-4 pb-3">
           <div className="flex items-center gap-3">
-            <input type="checkbox" name="information_accurate" value="true" />
+            <input type="checkbox" name="information_accurate" value="true" required />
             <label htmlFor="" className="text-header-text text-sm md:text-base">
               I confirm that the information provided in this application is
               accurate to the best of my knowledge.
             </label>
           </div>
           <div className="flex items-center gap-3">
-            <input type="checkbox" name="privacy_consent" value="true" />
+            <input type="checkbox" name="privacy_consent" value="true" required />
             <label htmlFor="" className="text-header-text text-sm md:text-base">
               I agree to the processing of my information for the purposes
               described in the Privacy Notice.
@@ -159,7 +159,7 @@ function StepFive({ isSubmitting }: StepFiveProps) {
         {/* checkbox */}
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-3">
-            <input type="checkbox" name="applicant_declaration_agreed" value="true" />
+            <input type="checkbox" name="applicant_declaration_agreed" value="true" required />
             <label htmlFor="" className="text-header-text text-sm md:text-base">
               I agree to the Applicant Declaration.
             </label>

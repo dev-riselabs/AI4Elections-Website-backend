@@ -151,6 +151,7 @@ function LocationFields() {
         <select
           id="residence-country"
           name="country"
+          required
           className={selectClassName}
           value={countryName}
           disabled={countriesLoading || countries.length === 0}
@@ -204,6 +205,7 @@ function LocationFields() {
         <select
           id="residence-state"
           name="state"
+          required
           className={selectClassName}
           value={stateName}
           disabled={!countryName || statesLoading || states.length === 0}
@@ -259,6 +261,7 @@ function LocationFields() {
         <select
           id="residence-city"
           name="city"
+          required
           className={selectClassName}
           value={cityName}
           disabled={!stateName || citiesLoading || cities.length === 0}

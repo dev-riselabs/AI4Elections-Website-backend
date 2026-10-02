@@ -217,7 +217,7 @@ const Footer: React.FC = () => {
           </div>
           <div className="mt-10 xl:pl-4 md:col-span-3">
             <div className="text-right space-y-4 text-[13px] text-white md:text-[14px]">
-              <div className="font-medium">+234.706.054.5027</div>
+              {/* <div className="font-medium">+234.706.054.5027</div> */}
               <div className="font-light md:text-xs">info@risenetworks.org</div>
               <div className="leading-relaxed text-white/90 md:text-xs">
                 Rise Networks AI Labs

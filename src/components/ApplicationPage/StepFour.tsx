@@ -1,22 +1,28 @@
 import { IoArrowBackOutline, IoArrowForwardSharp } from "react-icons/io5";
 import { LuUser } from "react-icons/lu";
+import { useState } from "react";
 
 type StepFourProps = {
   handleNext: (value: number) => void;
+  applicationType: string;
 };
 
-function StepFour({ handleNext }: StepFourProps) {
+function StepFour({ handleNext, applicationType }: StepFourProps) {
+  const [teamMatching, setTeamMatching] = useState("");
+  const [needsAccessibilitySupport, setNeedsAccessibilitySupport] = useState("");
+
   return (
     <div className="flex flex-col rounded-3xl border border-form-border border-t-0 overflow-hidden relative p-4 md:p-8 gap-12">
       <div className="w-full h-1.5 bg-linear-to-r from-[#2563EB] to-[#7C3AED] top-0 left-0 absolute"></div>
       <div className="flex flex-col gap-4">
+        {applicationType === "Individual" && <>
         {/* Applying as an Individual */}
         <div className="flex flex-col gap-4">
           <h3 className="text-xl md:text-2xl text-price-banner">
             Applying as an Individual
           </h3>
           <div className="flex flex-col gap-4">
-            <div className="flex flex-col gap-2">
+            {teamMatching === "true" && <div className="flex flex-col gap-2">
               <label
                 htmlFor=""
                 className="text-base md:text-xl text-header-text font-semibold"
@@ -26,7 +32,7 @@ function StepFour({ handleNext }: StepFourProps) {
               <select name="collaborator_type" className="rounded-xl text-sm md:text-base bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
                 <option value="">Select</option><option value="Designer">Designer</option><option value="Developer">Developer</option><option value="Researcher">Researcher</option><option value="Policy specialist">Policy specialist</option><option value="Other">Other</option>
               </select>
-            </div>
+            </div>}
             <div className="flex flex-col gap-2 ">
               <label
                 htmlFor=""
@@ -36,13 +42,13 @@ function StepFour({ handleNext }: StepFourProps) {
               </label>
               <div className="flex items-center gap-12 flex-wrap">
                 <div className="flex items-center gap-3">
-                  <input type="radio" name="team_matching" value="true" />
+                  <input type="radio" name="team_matching" value="true" checked={teamMatching === "true"} onChange={(event) => setTeamMatching(event.currentTarget.value)} />
                   <label htmlFor="" className="text-header-text text-sm md:text-base">
                     Yes
                   </label>
                 </div>
                 <div className="flex items-center gap-3">
-                  <input type="radio" name="team_matching" value="false" />
+                  <input type="radio" name="team_matching" value="false" checked={teamMatching === "false"} onChange={(event) => setTeamMatching(event.currentTarget.value)} />
                   <label htmlFor="" className="text-header-text text-sm md:text-base">
                     No
                   </label>
@@ -51,12 +57,13 @@ function StepFour({ handleNext }: StepFourProps) {
             </div>
           </div>
         </div>
+        </>}
 
         {/* divider */}
         <div className="max-w-147.25 bg-divider w-full h-0.5"></div>
 
         {/* Applying as an existing team */}
-        <div className="flex flex-col gap-4">
+        {(applicationType === "Team" || applicationType === "Organization") && <div className="flex flex-col gap-4">
           <h3 className="text-xl md:text-2xl text-price-banner">
             Applying as an existing team
           </h3>
@@ -133,7 +140,7 @@ function StepFour({ handleNext }: StepFourProps) {
               <textarea name="team_members" className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
             </div>
           </div>
-        </div>
+        </div>}
 
         {/* divider */}
         <div className="max-w-147.25 bg-divider w-full h-0.5"></div>
@@ -154,28 +161,28 @@ function StepFour({ handleNext }: StepFourProps) {
               </label>
               <div className="flex items-center gap-12 flex-wrap">
                 <div className="flex items-center gap-3">
-                  <input type="radio" name="accessibility_requirements" value="true" />
+                  <input type="radio" name="accessibility_requirements" value="true" checked={needsAccessibilitySupport === "true"} onChange={(event) => setNeedsAccessibilitySupport(event.currentTarget.value)} />
                   <label htmlFor="" className="text-header-text text-sm md:text-base">
                     Yes
                   </label>
                 </div>
                 <div className="flex items-center gap-3">
-                  <input type="radio" name="accessibility_requirements" value="false" />
+                  <input type="radio" name="accessibility_requirements" value="false" checked={needsAccessibilitySupport === "false"} onChange={(event) => setNeedsAccessibilitySupport(event.currentTarget.value)} />
                   <label htmlFor="" className="text-header-text text-sm md:text-base">
                     No
                   </label>
                 </div>
               </div>
             </div>
-            <div className="flex flex-col gap-2 ">
+            {needsAccessibilitySupport === "true" && <div className="flex flex-col gap-2 ">
               <label
                 htmlFor=""
                 className="text-base md:text-xl text-header-text font-semibold"
               >
                 If yes, please tell us what support you may require
               </label>
-              <textarea name="accessibility_support" className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
-            </div>
+              <textarea name="accessibility_support" required className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
+            </div>}
           </div>
         </div>
 
