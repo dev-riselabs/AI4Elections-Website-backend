@@ -42,7 +42,7 @@ function StepThree({ handleNext }: StepThreeProps) {
               >
                 If Yes, what problem are you trying to solve? *
               </label>
-              <textarea name="problem_to_solve" className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
+              <textarea name="problem_to_solve" className="rounded-xl bg-form-input shadow flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
             </div>
             <div className="flex flex-col gap-2 ">
               <label
@@ -51,7 +51,7 @@ function StepThree({ handleNext }: StepThreeProps) {
               >
                 Who is affected by this problem? *
               </label>
-              <textarea name="affected_people" className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
+              <textarea name="affected_people" className="rounded-xl bg-form-input shadow flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
             </div>
             <div className="flex flex-col gap-2 ">
               <label
@@ -60,7 +60,7 @@ function StepThree({ handleNext }: StepThreeProps) {
               >
                 Describe your proposed solution *
               </label>
-              <textarea name="proposed_solution" className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
+              <textarea name="proposed_solution" className="rounded-xl bg-form-input shadow flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
             </div>
             <div className="flex flex-col gap-2 ">
               <label
@@ -69,7 +69,7 @@ function StepThree({ handleNext }: StepThreeProps) {
               >
                 How would AI or technology contribute to the solution? *
               </label>
-              <textarea name="technology_contribution" className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
+              <textarea name="technology_contribution" className="rounded-xl bg-form-input shadow flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
             </div>
             <div className="flex flex-col gap-2 ">
               <label
@@ -78,7 +78,7 @@ function StepThree({ handleNext }: StepThreeProps) {
               >
                 Who would benefit from the solution? *
               </label>
-              <textarea name="beneficiaries" className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
+              <textarea name="beneficiaries" className="rounded-xl bg-form-input shadow flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
             </div>
             <div className="flex flex-col gap-2 ">
               <label
@@ -87,7 +87,7 @@ function StepThree({ handleNext }: StepThreeProps) {
               >
                 What makes your approach different or useful? *
               </label>
-              <textarea name="differentiation" className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
+              <textarea name="differentiation" className="rounded-xl bg-form-input shadow flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
             </div>
 
             <div className="flex flex-col gap-2 ">
@@ -173,7 +173,7 @@ function StepThree({ handleNext }: StepThreeProps) {
               >
                 If yes, prototype/project link
               </label>
-              <div className="rounded-xl bg-form-input  flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
+              <div className="rounded-xl bg-form-input shadow  flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
                 {/* <LuPhone className="w-5 md:w-6 h-5 md:h-6" /> */}
                 <input
                   type="url"

@@ -23,7 +23,7 @@ function StepFour({ handleNext }: StepFourProps) {
               >
                 What type of collaborator would you like to work with?
               </label>
-              <select name="collaborator_type" className="rounded-xl text-sm md:text-base bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
+              <select name="collaborator_type" className="rounded-xl text-sm md:text-base bg-form-input shadow flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
                 <option value="">Select</option><option value="Designer">Designer</option><option value="Developer">Developer</option><option value="Researcher">Researcher</option><option value="Policy specialist">Policy specialist</option><option value="Other">Other</option>
               </select>
             </div>
@@ -68,7 +68,7 @@ function StepFour({ handleNext }: StepFourProps) {
               >
                 Team Name
               </label>
-              <div className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
+              <div className="rounded-xl bg-form-input shadow flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
                 {/* <LuUser className="w-5 md:w-6 h-5 md:h-6" /> */}
                 <input
                   type="text"
@@ -85,7 +85,7 @@ function StepFour({ handleNext }: StepFourProps) {
               >
                 Team Lead
               </label>
-              <div className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
+              <div className="rounded-xl bg-form-input shadow flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
                 <LuUser className="w-5 md:w-6 h-5 md:h-6" />
                 <input
                   type="text"
@@ -102,7 +102,7 @@ function StepFour({ handleNext }: StepFourProps) {
               >
                 Team size
               </label>
-              <div className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
+              <div className="rounded-xl bg-form-input shadow flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
                 <LuUser className="w-5 md:w-6 h-5 md:h-6" />
                 <input
                   type="text"
@@ -120,7 +120,7 @@ function StepFour({ handleNext }: StepFourProps) {
               >
                 Team Description
               </label>
-              <textarea name="team_description" className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
+              <textarea name="team_description" className="rounded-xl bg-form-input shadow flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
             </div>
             <div className="flex flex-col gap-2 md:col-span-2">
               <label
@@ -130,7 +130,7 @@ function StepFour({ handleNext }: StepFourProps) {
                 Names and Role of Team Members ( use (,) after each name and
                 role)
               </label>
-              <textarea name="team_members" className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
+              <textarea name="team_members" className="rounded-xl bg-form-input shadow flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
             </div>
           </div>
         </div>
@@ -174,7 +174,7 @@ function StepFour({ handleNext }: StepFourProps) {
               >
                 If yes, please tell us what support you may require
               </label>
-              <textarea name="accessibility_support" className="rounded-xl bg-form-input flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
+              <textarea name="accessibility_support" className="rounded-xl bg-form-input shadow flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all resize-none outline-none h-30 md:h-47.5"></textarea>
             </div>
           </div>
         </div>
