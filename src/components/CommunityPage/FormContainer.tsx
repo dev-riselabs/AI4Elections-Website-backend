@@ -1,6 +1,7 @@
 import { HiOutlineMail } from "react-icons/hi";
 import { IoArrowForwardSharp } from "react-icons/io5";
 import { LuPhone, LuUser } from "react-icons/lu";
+import LocationFields from "../LocationFields";
 
 function FormContainer() {
   return (
@@ -82,39 +83,7 @@ function FormContainer() {
                   />
                 </div>
               </div>
-              <div className="flex flex-col gap-2">
-                <label
-                  htmlFor=""
-                  className="text-base md:text-xl text-header-text font-semibold"
-                >
-                  Country of Residence *
-                </label>
-                <select className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
-                  <option value="">Select country</option>
-                </select>
-              </div>
-              <div className="flex flex-col gap-2">
-                <label
-                  htmlFor=""
-                  className="text-base md:text-xl text-header-text font-semibold"
-                >
-                  State of Residence *
-                </label>
-                <select className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
-                  <option value="">Select state</option>
-                </select>
-              </div>
-              <div className="flex flex-col gap-2">
-                <label
-                  htmlFor=""
-                  className="text-base md:text-xl text-header-text font-semibold"
-                >
-                  City *
-                </label>
-                <select className="rounded-xl bg-form-input text-sm md:text-base flex items-center gap-2.5 px-4 py-2.5 focus-within:border focus-within:border-brand-blue transition-all">
-                  <option value="">Select city</option>
-                </select>
-              </div>
+              <LocationFields />
               <div className="flex flex-col gap-2">
                 <label
                   htmlFor=""
