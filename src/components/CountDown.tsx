@@ -4,23 +4,6 @@ const EVENT_MONTH = 9; // June (0-based)
 const START_DAY = 9;
 // const END_DAY = 10;
 
-const getEventStatus = (date: Date) => {
-  const year = date.getFullYear();
-
-  const start = new Date(year, EVENT_MONTH, START_DAY, 9, 0, 0); // June 8, 9AM
-  //   const end = new Date(year, EVENT_MONTH, END_DAY, 23, 59, 59); // June 10 end of day
-
-  //   if (date >= start && date <= end) {
-  //     return "LIVE";
-  //   }
-
-  if (date > start) {
-    return "ENDED";
-  }
-
-  return "UPCOMING";
-};
-
 const getTargetDate = () => {
   const now = new Date();
   let target = new Date(now.getFullYear(), EVENT_MONTH, START_DAY, 9, 0, 0);
@@ -51,12 +34,10 @@ const calculateTimeLeft = () => {
 
 export default function CountdownTimer() {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-  const [status, setStatus] = useState(getEventStatus(new Date()));
 
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
-      setStatus(getEventStatus(new Date()));
     }, 1000);
 
     return () => clearInterval(timer);
